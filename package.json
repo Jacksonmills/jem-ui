@@ -32,6 +32,7 @@
     "shadcn": "2.4.0-canary.12",
     "sonner": "^2.0.1",
     "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
     "tw-animate-css": "^1.2.4",
     "vaul": "^1.1.2",
     "zod": "^3.24.1"
