@@ -11,7 +11,7 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/ui/accordion.tsx",
+          "path": "registry/ui/accordion.tsx",
           "type": "registry:ui"
         }
       ]
@@ -22,28 +22,17 @@
       "dependencies": [
         "@base-ui-components/react"
       ],
-      "registryDependencies": ["button"],
-      "files": [
-        {
-          "path": "registry/new-york/ui/alert-dialog.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-        {
-      "name": "button",
-      "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
+      "registryDependencies": [
+        "button"
       ],
       "files": [
         {
-          "path": "registry/new-york/ui/button.tsx",
+          "path": "registry/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
       ]
     },
-        {
+    {
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": [
@@ -51,7 +40,7 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/ui/avatar.tsx",
+          "path": "registry/ui/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -64,12 +53,80 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/ui/breadcrumb.tsx",
+          "path": "registry/ui/breadcrumb.tsx",
           "type": "registry:ui"
         }
       ]
     },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
         {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "dependencies": [
+        "cmdk@1.0.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/ui/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dropdown-menu",
       "type": "registry:ui",
       "dependencies": [
@@ -77,65 +134,67 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/ui/dropdown-menu.tsx",
+          "path": "registry/ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "hover-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
-          "path": "registry/new-york/hello-world/hello-world.tsx",
-          "type": "registry:component"
+          "path": "registry/ui/hover-card.tsx",
+          "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "name": "input",
+      "type": "registry:ui",
       "files": [
         {
-          "path": "registry/new-york/example-form/example-form.tsx",
-          "type": "registry:component"
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "name": "label",
+      "type": "registry:ui",
       "files": [
         {
-          "path": "registry/new-york/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/ui/dropdown-menu"
+      ],
+      "files": [
         {
-          "path": "registry/new-york/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
+          "path": "registry/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "files": [
         {
-          "path": "registry/new-york/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
+          "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui"
         }
       ]
     }

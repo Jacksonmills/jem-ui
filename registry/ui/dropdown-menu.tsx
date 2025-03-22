@@ -6,6 +6,10 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+const DropdownMenuCheckboxItemIndicator = DropdownMenuPrimitive.CheckboxItemIndicator;
+
+const DropdownMenuRadioItemIndicator = DropdownMenuPrimitive.RadioItemIndicator;
+
 function DropdownMenu({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
@@ -31,7 +35,7 @@ function DropdownMenuTrigger({
   );
 }
 
-function DropdownMenuPopup({
+function DropdownMenuContent({
   className,
   sideOffset = 4,
   ...props
@@ -42,7 +46,7 @@ function DropdownMenuPopup({
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Positioner className="outline-hidden" sideOffset={sideOffset}>
         <DropdownMenuPrimitive.Popup
-          data-slot="dropdown-menu-popup"
+          data-slot="dropdown-menu-content"
           className={cn(
             "origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 bg-popover text-popover-foreground rounded-md border p-1 shadow-md outline-hidden relative",
             className
@@ -102,9 +106,9 @@ function DropdownMenuCheckboxItem({
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <DropdownMenuPrimitive.CheckboxItemIndicator>
+        <DropdownMenuCheckboxItemIndicator>
           <CheckIcon className="size-4" />
-        </DropdownMenuPrimitive.CheckboxItemIndicator>
+        </DropdownMenuCheckboxItemIndicator>
       </span>
       {children}
     </DropdownMenuPrimitive.CheckboxItem>
@@ -137,9 +141,9 @@ function DropdownMenuRadioItem({
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <DropdownMenuPrimitive.RadioItemIndicator>
+        <DropdownMenuRadioItemIndicator>
           <CircleIcon className="size-2 fill-current" />
-        </DropdownMenuPrimitive.RadioItemIndicator>
+        </DropdownMenuRadioItemIndicator>
       </span>
       {children}
     </DropdownMenuPrimitive.RadioItem>
@@ -221,8 +225,8 @@ function DropdownMenuArrow({
 
 function DropdownMenuSub({
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
-  return <DropdownMenuPrimitive.Root data-slot="dropdown-menu-sub" {...props} />;
+}: React.ComponentProps<typeof DropdownMenu>) {
+  return <DropdownMenu data-slot="dropdown-menu-sub" {...props} />;
 }
 
 function DropdownMenuSubTrigger({
@@ -277,13 +281,15 @@ export {
   DropdownMenu,
   DropdownMenuPortal,
   DropdownMenuTrigger,
-  DropdownMenuPopup,
+  DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuItem,
   DropdownMenuCheckboxItem,
+  DropdownMenuCheckboxItemIndicator,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
+  DropdownMenuRadioItemIndicator,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuArrow,
