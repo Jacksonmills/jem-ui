@@ -2,7 +2,7 @@ import * as React from "react";
 import { AlertDialog as AlertDialogPrimitive } from '@base-ui-components/react/alert-dialog';
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/registry/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 function AlertDialog({
   ...props
