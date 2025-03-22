@@ -28,7 +28,7 @@ export function CodeBlockCommand({
       yarn: `npx shacn@latest add ${siteUrl}/ui/${component}`,
       bun: `bunx --bun shacn@latest add ${siteUrl}/ui/${component}`,
     };
-  }, [component]);
+  }, [siteUrl, component]);
 
   const copyCommand = React.useCallback(() => {
     const command: string = tabs[packageManager];
@@ -42,7 +42,7 @@ export function CodeBlockCommand({
   }, [packageManager, tabs]);
 
   return (
-    <div className="relative mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900">
+    <div className="relative max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900">
       <Tabs
         value={packageManager}
         onValueChange={(value) => setPackageManager(value as "pnpm" | "npm" | "yarn" | "bun")}
