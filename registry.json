@@ -189,6 +189,19 @@
       ]
     },
     {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "files": [
