@@ -88,7 +88,7 @@ export function ExampleForm() {
               id="name"
               name="name"
               placeholder="Lee Robinson"
-              className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
+              className="group-data-[invalid=true]/field:border-destructive group-data-[invalid=true]/field:focus-visible:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.name}
               aria-errormessage="error-name"
@@ -114,7 +114,7 @@ export function ExampleForm() {
               id="email"
               name="email"
               placeholder="leerob@acme.com"
-              className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
+              className="group-data-[invalid=true]/field:border-destructive group-data-[invalid=true]/field:focus-visible:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.email}
               aria-errormessage="error-email"
@@ -140,7 +140,7 @@ export function ExampleForm() {
               id="message"
               name="message"
               placeholder="Type your message here..."
-              className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
+              className="group-data-[invalid=true]/field:border-destructive group-data-[invalid=true]/field:focus-visible:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.message}
               aria-errormessage="error-message"
