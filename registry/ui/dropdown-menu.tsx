@@ -37,14 +37,16 @@ function DropdownMenuTrigger({
 
 function DropdownMenuContent({
   className,
+  align = "start",
   sideOffset = 4,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
   sideOffset?: number | (() => number);
+  align?: "start" | "center" | "end";
 }) {
   return (
     <DropdownMenuPrimitive.Portal>
-      <DropdownMenuPrimitive.Positioner className="outline-hidden" sideOffset={sideOffset}>
+      <DropdownMenuPrimitive.Positioner className="outline-hidden" sideOffset={sideOffset} align={align}>
         <DropdownMenuPrimitive.Popup
           data-slot="dropdown-menu-content"
           className={cn(
@@ -200,7 +202,6 @@ function DropdownMenuShortcut({
 }
 
 function DropdownMenuArrow({
-  className,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Arrow>) {
   return (

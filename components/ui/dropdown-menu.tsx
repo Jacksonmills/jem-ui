@@ -202,7 +202,6 @@ function DropdownMenuShortcut({
 }
 
 function DropdownMenuArrow({
-  className,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Arrow>) {
   return (
