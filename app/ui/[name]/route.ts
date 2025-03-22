@@ -40,7 +40,8 @@ export async function GET(
     // Read all files in parallel.
     const filesWithContent = await Promise.all(
       registryItem.files.map(async (file) => {
-        const filePath = path.join(process.cwd(), "public", file.path);
+        console.log(process.cwd());
+        const filePath = path.join(file.path);
         const content = await fs.readFile(filePath, "utf8");
         return { ...file, content };
       })
