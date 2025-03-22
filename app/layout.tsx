@@ -5,6 +5,8 @@ import { ThemeProvider } from "next-themes";
 import { ModeToggle } from "@/components/mode-toggle";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,8 +39,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed top-4 right-4 z-50">
+          <div className="flex flex-col items-center justify-center fixed top-4 right-4 z-50">
             <ModeToggle />
+            <Button
+              className="h-7 w-7"
+              size="icon"
+              variant="ghost"
+              asChild
+            >
+              <a href="https://github.com/Jacksonmills/jem-ui">
+                <Icons.gitHub className="w-6 h-6" />
+              </a>
+            </Button>
           </div>
           <div className="isolate">
             {children}
