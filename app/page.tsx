@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Sink } from "@/components/sink";
+import { Sink } from "@/components/demos/sink";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {

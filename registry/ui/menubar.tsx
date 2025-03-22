@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Toolbar as ToolbarPrimitive } from '@base-ui-components/react/toolbar';
-import { CheckIcon, CircleIcon } from "lucide-react";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuCheckboxItemIndicator, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuRadioItemIndicator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -15,7 +15,7 @@ function Menubar({
     <ToolbarPrimitive.Root
       data-slot="menubar"
       className={cn(
-        "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs",
+        "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs w-fit",
         className
       )}
       {...props}
@@ -191,6 +191,48 @@ function MenubarShortcut({
   );
 }
 
+function MenubarSub({
+  ...props
+}: React.ComponentProps<typeof DropdownMenu>) {
+  return <DropdownMenu data-slot="menubar-sub" {...props} />;
+}
+
+function MenubarSubTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof ToolbarPrimitive.Button>) {
+  return (
+    <ToolbarPrimitive.Button
+      data-slot="menubar-sub-trigger"
+      className={cn(
+        "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none w-full",
+        className
+      )}
+      render={<DropdownMenuTrigger />}
+      {...props}
+    >
+      {children}
+      <ChevronRightIcon className="ml-auto h-4 w-4" />
+    </ToolbarPrimitive.Button>
+  );
+}
+
+function MenubarSubContent({
+  className,
+  sideOffset = 8,
+  ...props
+}: React.ComponentProps<typeof DropdownMenuContent>) {
+  return (
+    <DropdownMenuContent
+      data-slot="menubar-sub-content"
+      sideOffset={sideOffset}
+      className={className}
+      {...props}
+    />
+  );
+}
+
 export {
   Menubar,
   MenubarMenu,
@@ -205,4 +247,7 @@ export {
   MenubarCheckboxItem,
   MenubarRadioGroup,
   MenubarRadioItem,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent,
 };
