@@ -200,7 +200,7 @@ function DropdownMenuArrow({
     <DropdownMenuPrimitive.Arrow
       data-slot="dropdown-menu-arrow"
       className={cn(
-        "bg-popover shadow-md data-[side=bottom]:rotate-180 data-[side=left]:rotate-90 data-[side=right]:rotate-90 data-[side=top]:rotate-0",
+        "data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=left]:rotate-90 data-[side=right]:left-[-13px] data-[side=right]:-rotate-90 data-[side=top]:bottom-[-8px] data-[side=top]:rotate-180",
         className
       )}
       {...props}
