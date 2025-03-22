@@ -4,7 +4,6 @@ import * as React from "react";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { usePathname } from "next/navigation";
 
 export function CodeBlockCommand({
   component
@@ -50,7 +49,7 @@ export function CodeBlockCommand({
       >
         <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-3 pt-2.5">
           <TabsList className="h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1">
-            {Object.entries(tabs).map(([key, value]) => {
+            {Object.entries(tabs).map(([key]) => {
               return (
                 <TabsTrigger
                   key={key}
