@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Command as CommandPrimitive } from "cmdk";
+import { ScrollArea } from '@base-ui-components/react/scroll-area';
 import { SearchIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -80,14 +81,23 @@ function CommandList({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.List>) {
   return (
-    <CommandPrimitive.List
-      data-slot="command-list"
-      className={cn(
-        "max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto",
-        className
-      )}
-      {...props}
-    />
+    <ScrollArea.Root>
+      <ScrollArea.Viewport>
+        <div className="pr-6">
+          <CommandPrimitive.List
+            data-slot="command-list"
+            className={cn(
+              "max-h-[300px]",
+              className
+            )}
+            {...props}
+          />
+        </div>
+      </ScrollArea.Viewport>
+      <ScrollArea.Scrollbar className="m-2 flex w-1 justify-center rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[hovering]:delay-0 data-[hovering]:duration-75 data-[scrolling]:opacity-100 data-[scrolling]:delay-0 data-[scrolling]:duration-75">
+        <ScrollArea.Thumb className="w-full rounded bg-muted-foreground" />
+      </ScrollArea.Scrollbar>
+    </ScrollArea.Root>
   );
 }
 

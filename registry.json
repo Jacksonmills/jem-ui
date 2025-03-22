@@ -101,7 +101,8 @@
       "name": "command",
       "type": "registry:ui",
       "dependencies": [
-        "cmdk@1.0.0"
+        "cmdk@1.0.0",
+        "@base-ui-components/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/ui/dialog"
