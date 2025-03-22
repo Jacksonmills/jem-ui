@@ -33,7 +33,7 @@ export function DemoCard({ children, slug, displayName, description, links }: {
 
         <div className="flex gap-2">
           {links?.map((link, index) => (
-            <Button key={index} className="text-xs h-5 font-semibold" size="sm" variant="secondary" asChild>
+            <Button key={index} className="h-5 text-xs font-semibold bg-muted-foreground text-background" size="sm" asChild>
               <a href={link.href}>
                 {link.label} <ExternalLinkIcon className="size-3" />
               </a>
