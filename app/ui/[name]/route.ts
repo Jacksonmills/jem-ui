@@ -12,7 +12,6 @@ export async function GET(
     const { name } = await params;
     // Cache the registry import
     const registryData = await import("@/registry.json");
-    console.log(registryData);
     const registry = registryData.default;
 
     // Find the component from the registry.
@@ -40,8 +39,7 @@ export async function GET(
     // Read all files in parallel.
     const filesWithContent = await Promise.all(
       registryItem.files.map(async (file) => {
-        console.log(process.cwd());
-        const filePath = path.join(file.path);
+        const filePath = path.join(process.cwd(), file.path);
         const content = await fs.readFile(filePath, "utf8");
         return { ...file, content };
       })
