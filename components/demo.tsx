@@ -13,12 +13,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuArrow,
+  DropdownMenuSeparator,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubPopup,
+  DropdownMenuSub,
 } from "@/components/ui/dropdown-menu";
 
 export function Demo() {
   return (
     <div>
-
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -31,11 +34,23 @@ export function Demo() {
                 <BreadcrumbEllipsis className="h-4 w-4" />
                 <span className="sr-only">Toggle menu</span>
               </DropdownMenuTrigger>
-              <DropdownMenuPopup sideOffset={8}>
+              <DropdownMenuPopup sideOffset={12}>
                 <DropdownMenuArrow />
                 <DropdownMenuItem>Documentation</DropdownMenuItem>
                 <DropdownMenuItem>Themes</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Report an issue</DropdownMenuItem>
+                <DropdownMenu>
+                  <DropdownMenuSubTrigger>
+                    <DropdownMenuItem>Submenu item 1</DropdownMenuItem>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubPopup sideOffset={8}>
+                    <DropdownMenuItem>Submenu item 2</DropdownMenuItem>
+                    <DropdownMenuItem>Submenu item 3</DropdownMenuItem>
+                    <DropdownMenuItem>Submenu item 4</DropdownMenuItem>
+                  </DropdownMenuSubPopup>
+                </DropdownMenu>
               </DropdownMenuPopup>
             </DropdownMenu>
           </BreadcrumbItem>
