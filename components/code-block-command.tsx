@@ -47,14 +47,14 @@ export function CodeBlockCommand({
         value={packageManager}
         onValueChange={(value) => setPackageManager(value as "pnpm" | "npm" | "yarn" | "bun")}
       >
-        <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-3 pt-2.5">
+        <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 dark:bg-zinc-800 px-3 pt-2.5">
           <TabsList className="h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1">
             {Object.entries(tabs).map(([key]) => {
               return (
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 font-mono text-zinc-400 data-[state=active]:border-b-zinc-50 data-[state=active]:bg-transparent data-[state=active]:text-zinc-50"
+                  className="rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 font-mono text-zinc-400 data-[state=active]:bg-transparent data-[state=active]:text-white dark:data-[state=active]:border-transparent dark:border-b dark:bg-transparent  dark:data-[state=active]:bg-transparent data-[state=active]:border-b-blue-500 dark:data-[state=active]:border-b-blue-500"
                 >
                   {key}
                 </TabsTrigger>
@@ -67,7 +67,7 @@ export function CodeBlockCommand({
             <TabsContent key={key} value={key} className="mt-0">
               <pre className="px-4 py-5">
                 <code
-                  className="relative font-mono text-sm leading-none text-background"
+                  className="relative font-mono text-sm leading-none text-white"
                   data-language="bash"
                 >
                   {value}
