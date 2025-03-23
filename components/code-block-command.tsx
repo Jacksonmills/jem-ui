@@ -23,10 +23,10 @@ export function CodeBlockCommand({
 
   const tabs = React.useMemo(() => {
     return {
-      pnpm: `pnpm dlx shacn@latest add ${siteUrl}/ui/${component}`,
-      npm: `npx shacn@latest add ${siteUrl}/ui/${component}`,
-      yarn: `npx shacn@latest add ${siteUrl}/ui/${component}`,
-      bun: `bunx --bun shacn@latest add ${siteUrl}/ui/${component}`,
+      pnpm: `pnpm dlx shadcn@latest add ${siteUrl}/ui/${component}`,
+      npm: `npx shadcn@latest add ${siteUrl}/ui/${component}`,
+      yarn: `npx shadcn@latest add ${siteUrl}/ui/${component}`,
+      bun: `bunx --bun shadcn@latest add ${siteUrl}/ui/${component}`,
     };
   }, [siteUrl, component]);
 
