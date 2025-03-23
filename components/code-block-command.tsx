@@ -42,7 +42,7 @@ export function CodeBlockCommand({
   }, [packageManager, tabs]);
 
   return (
-    <div className="relative max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900">
+    <div className="relative max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900 md:block hidden">
       <Tabs
         value={packageManager}
         onValueChange={(value) => setPackageManager(value as "pnpm" | "npm" | "yarn" | "bun")}

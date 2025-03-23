@@ -19,7 +19,7 @@ export function DemoCard({ children, slug, displayName, description, links }: {
   links?: { href: string; label: string; }[];
 }) {
   return (
-    <div className="bg-muted dark:bg-muted/25 p-12 rounded-xl flex gap-4 flex-col">
+    <div className="md:bg-muted md:dark:bg-muted/25 border p-4 md:p-12 rounded-xl flex gap-4 flex-col">
       <div className="flex flex-col items-start gap-4">
         <h2 className="text-2xl font-semibold">
           {displayName}
@@ -41,23 +41,23 @@ export function DemoCard({ children, slug, displayName, description, links }: {
           ))}
         </div>
       </div>
-      <div className="bg-background p-8 rounded-lg border flex flex-col gap-8">
+      <div className="md:bg-background p-2 md:p-8 rounded-lg md:border flex flex-col gap-8">
         <div>
           {children}
         </div>
 
-        <CodeBlockCommand
-          component={slug}
-        />
+
       </div>
+      <CodeBlockCommand
+        component={slug}
+      />
     </div>
   );
 }
 
 export function Sink() {
   return (
-    <div className="space-y-16">
-      <Separator />
+    <div className="space-y-4 md:space-y-16">
       <DemoCard displayName="Accordion" slug="accordion" links={
         [
           { href: "https://base-ui.com/react/components/accordion", label: "Docs" },
@@ -122,7 +122,6 @@ export function Sink() {
       ]}>
         <MenubarDemo />
       </DemoCard>
-      <Separator />
     </div>
   );
 }

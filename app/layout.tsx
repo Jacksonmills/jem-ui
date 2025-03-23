@@ -39,7 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col items-center justify-center fixed top-4 right-4 z-50">
+          <div className="flex flex-col items-center justify-center fixed top-4 right-4 z-50 bg-muted/50 rounded-full p-1">
             <ModeToggle />
             <Button
               className="h-7 w-7"
@@ -54,6 +54,9 @@ export default function RootLayout({
           </div>
           <div className="isolate">
             {children}
+            <footer className="text-muted-foreground text-sm p-4 border-t">
+              Built by <Button className="text-blue-500 p-0" variant="link"><a href="https://twitter.com/jacksonmills">Jacksonmills</a></Button>. The source code is available on <Button className="text-blue-500 p-0" variant="link"><a href="https://github.com/Jacksonmills/jem-ui">GitHub</a></Button>.
+            </footer>
           </div>
         </ThemeProvider>
         <SpeedInsights />
