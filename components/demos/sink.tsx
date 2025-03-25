@@ -99,7 +99,7 @@ export function Sink() {
       {data.map((item, index) => (
         <React.Fragment key={index}>
           <DemoCard key={index} {...item} />
-          <Separator />
+          {index < data.length - 1 && <Separator />}
         </React.Fragment>
       ))}
     </div >

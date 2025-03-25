@@ -24,7 +24,7 @@ export function DemoCard({ children, slug, displayName, description, links }: {
 
         <div className="flex gap-2">
           {links?.map((link, index) => (
-            <Button key={index} className="h-5 text-xs font-semibold bg-muted-foreground text-background" size="sm" asChild>
+            <Button key={index} className="h-5 text-xs font-semibold bg-muted-foreground hover:bg-muted-foreground/80 text-background" size="sm" asChild>
               <a href={link.href}>
                 {link.label} <ExternalLinkIcon className="size-3" />
               </a>

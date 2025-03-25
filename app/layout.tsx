@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { PostHogProvider } from "@/components/post-hog-provider";
+import { TextLink } from "@/components/text-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,7 +60,7 @@ export default function RootLayout({
               {children}
             </PostHogProvider>
             <footer className="text-muted-foreground text-sm p-4 border-t">
-              Built by <Button className="text-blue-500 p-0" variant="link"><a href="https://twitter.com/jacksonmills">Jacksonmills</a></Button>. The source code is available on <Button className="text-blue-500 p-0" variant="link"><a href="https://github.com/Jacksonmills/jem-ui">GitHub</a></Button>.
+              Built by <TextLink href="https://twitter.com/jacksonmills">JEM</TextLink>. The source code is available on <TextLink href="https://github.com/Jacksonmills/jem-ui">GitHub</TextLink>.
             </footer>
           </div>
         </ThemeProvider>
