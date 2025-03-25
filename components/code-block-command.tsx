@@ -4,7 +4,7 @@ import * as React from "react";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { trackEvent } from "@/lib/events";
+import posthog from "posthog-js";
 
 export function CodeBlockCommand({
   component
@@ -38,12 +38,9 @@ export function CodeBlockCommand({
       return;
     }
 
-    trackEvent({
-      name: "copy_npm_command",
-      properties: {
-        command,
-        packageManager,
-      },
+    posthog.capture('copy_npm_command', {
+      command,
+      packageManager
     });
     navigator.clipboard.writeText(command);
     setHasCopied(true);
