@@ -10,7 +10,7 @@ export function DemoCard({ children, slug, displayName, description, links }: {
   links?: { href: string; label: string; }[];
 }) {
   return (
-    <div className="md:bg-muted md:dark:bg-muted/25 border p-4 md:p-12 rounded-xl flex gap-4 flex-col">
+    <div className="md:bg-muted md:dark:bg-muted/25 p-4 md:p-12 rounded-xl flex gap-4 flex-col">
       <div className="flex flex-col items-start gap-4">
         <h2 className="text-2xl font-semibold">
           {displayName}

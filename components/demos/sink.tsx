@@ -5,7 +5,6 @@ import { DialogDemo } from "./dialog-demo";
 import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
 import { AccordionDemo } from "./accordion-demo";
-import { Separator } from "../ui/separator";
 import { AlertDialogDemo } from "./alert-dialog-demo";
 import * as React from "react";
 import { DemoCard } from "../demo-card";
@@ -99,7 +98,7 @@ export function Sink() {
       {data.map((item, index) => (
         <React.Fragment key={index}>
           <DemoCard key={index} {...item} />
-          {index < data.length - 1 && <Separator />}
+          {index < data.length - 1 && <hr className="border-b-2 border-dotted border-t-0 w-2/3 mx-auto" />}
         </React.Fragment>
       ))}
     </div >
