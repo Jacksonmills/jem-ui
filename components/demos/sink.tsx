@@ -7,121 +7,101 @@ import { MenubarDemo } from "./menubar-demo";
 import { AccordionDemo } from "./accordion-demo";
 import { Separator } from "../ui/separator";
 import { AlertDialogDemo } from "./alert-dialog-demo";
-import { CodeBlockCommand } from "../code-block-command";
-import { Button } from "../ui/button";
-import { ExternalLinkIcon } from "lucide-react";
+import * as React from "react";
+import { DemoCard } from "../demo-card";
 
-export function DemoCard({ children, slug, displayName, description, links }: {
-  children: React.ReactNode;
-  slug: string;
+interface Data {
   displayName: string;
-  description?: string;
+  slug: string;
+  children: React.ReactNode;
   links?: { href: string; label: string; }[];
-}) {
-  return (
-    <div className="md:bg-muted md:dark:bg-muted/25 border p-4 md:p-12 rounded-xl flex gap-4 flex-col">
-      <div className="flex flex-col items-start gap-4">
-        <h2 className="text-2xl font-semibold">
-          {displayName}
-        </h2>
-
-        {description && (
-          <p className="text-muted-foreground text-sm">
-            {description}
-          </p>
-        )}
-
-        <div className="flex gap-2">
-          {links?.map((link, index) => (
-            <Button key={index} className="h-5 text-xs font-semibold bg-muted-foreground text-background" size="sm" asChild>
-              <a href={link.href}>
-                {link.label} <ExternalLinkIcon className="size-3" />
-              </a>
-            </Button>
-          ))}
-        </div>
-      </div>
-      <div className="md:bg-background p-2 md:p-8 rounded-lg md:border flex flex-col gap-8">
-        <div>
-          {children}
-        </div>
-
-
-      </div>
-      <CodeBlockCommand
-        component={slug}
-      />
-    </div>
-  );
+  description?: string;
 }
+
+const data: Data[] = [
+  {
+    displayName: "Accordion",
+    slug: "accordion",
+    links: [
+      { href: "https://base-ui.com/react/components/accordion", label: "Docs" },
+      { href: "https://base-ui.com/react/components/accordion#api-reference", label: "API Reference" },
+    ],
+    children: <AccordionDemo />,
+  },
+  {
+    displayName: "Alert Dialog",
+    slug: "alert-dialog",
+    links: [
+      { href: "https://base-ui.com/react/components/alert-dialog", label: "Docs" },
+      { href: "https://base-ui.com/react/components/alert-dialog#api-reference", label: "API Reference" },
+    ],
+    children: <AlertDialogDemo />,
+  },
+  {
+    displayName: "Breadcrumb",
+    slug: "breadcrumb",
+    links: [
+      { href: "https://base-ui.com/react/utils/use-render", label: "Docs" },
+    ],
+    children: <BreadcrumbDemo />,
+  },
+  {
+    displayName: "Collapsible",
+    slug: "collapsible",
+    links: [
+      { href: "https://base-ui.com/react/components/collapsible", label: "Docs" },
+      { href: "https://base-ui.com/react/components/collapsible#api-reference", label: "API Reference" },
+    ],
+    children: <CollapsibleDemo />,
+  },
+  {
+    displayName: "Command Dialog",
+    slug: "command-dialog",
+    links: [
+      { href: "https://cmdk.paco.me/", label: "Docs" },
+      { href: "https://base-ui.com/react/components/scroll-area", label: "Scroll Area" },
+    ],
+    children: <CommandDialogDemo />,
+  },
+  {
+    displayName: "Dialog",
+    slug: "dialog",
+    links: [
+      { href: "https://base-ui.com/react/components/dialog", label: "Docs" },
+      { href: "https://base-ui.com/react/components/dialog#api-reference", label: "API Reference" },
+    ],
+    children: <DialogDemo />,
+  },
+  {
+    displayName: "Hover Card",
+    slug: "hover-card",
+    links: [
+      { href: "https://base-ui.com/react/components/preview-card", label: "Docs" },
+      { href: "https://base-ui.com/react/components/preview-card#api-reference", label: "API Reference" },
+    ],
+    children: <HoverCardDemo />,
+  },
+  {
+    displayName: "Menubar",
+    slug: "menubar",
+    description: "The Menubar is built using a composition of the Base UI Menu and Toolbar components.",
+    links: [
+      { href: "https://base-ui.com/react/components/menu", label: "Menu Docs" },
+      { href: "https://base-ui.com/react/components/toolbar", label: "Toolbar Docs" },
+    ],
+    children: <MenubarDemo />,
+  }
+];
 
 export function Sink() {
   return (
     <div className="space-y-4 md:space-y-16">
-      <DemoCard displayName="Accordion" slug="accordion" links={
-        [
-          { href: "https://base-ui.com/react/components/accordion", label: "Docs" },
-          { href: "https://base-ui.com/react/components/accordion#api-reference", label: "API Reference" },
-        ]
-      }>
-        <AccordionDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Alert Dialog" slug="alert-dialog" links={
-        [
-          { href: "https://base-ui.com/react/components/alert-dialog", label: "Docs" },
-          { href: "https://base-ui.com/react/components/alert-dialog#api-reference", label: "API Reference" },
-        ]
-      }>
-        <AlertDialogDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Breadcrumb" slug="breadcrumb" links={
-        [
-          { href: "https://base-ui.com/react/utils/use-render", label: "Docs" },
-        ]
-      }>
-        <BreadcrumbDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Collapsible" slug="collapsible" links={
-        [
-          { href: "https://base-ui.com/react/components/collapsible", label: "Docs" },
-          { href: "https://base-ui.com/react/components/collapsible#api-reference", label: "API Reference" },
-        ]
-      }>
-        <CollapsibleDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Command Dialog" slug="command-dialog" links={
-        [
-          { href: "https://cmdk.paco.me/", label: "Docs" },
-          { href: "https://base-ui.com/react/components/scroll-area", label: "Scroll Area" },
-        ]
-      }>
-        <CommandDialogDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Dialog" slug="dialog" links={[
-        { href: "https://base-ui.com/react/components/dialog", label: "Docs" },
-        { href: "https://base-ui.com/react/components/dialog#api-reference", label: "API Reference" },
-      ]}>
-        <DialogDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Hover Card" slug="hover-card" links={[
-        { href: "https://base-ui.com/react/components/preview-card", label: "Docs" },
-        { href: "https://base-ui.com/react/components/preview-card#api-reference", label: "API Reference" },
-      ]}>
-        <HoverCardDemo />
-      </DemoCard>
-      <Separator />
-      <DemoCard displayName="Menubar" description="The Menubar is built using a composition of the Base UI Menu and Toolbar components." slug="menubar" links={[
-        { href: "https://base-ui.com/react/components/menu", label: "Menu Docs" },
-        { href: "https://base-ui.com/react/components/toolbar", label: "Toolbar Docs" },
-      ]}>
-        <MenubarDemo />
-      </DemoCard>
-    </div>
+      {data.map((item, index) => (
+        <React.Fragment key={index}>
+          <DemoCard key={index} {...item} />
+          <Separator />
+        </React.Fragment>
+      ))}
+    </div >
   );
 }

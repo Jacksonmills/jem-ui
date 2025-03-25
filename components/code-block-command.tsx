@@ -4,6 +4,7 @@ import * as React from "react";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { trackEvent } from "@/lib/events";
 
 export function CodeBlockCommand({
   component
@@ -37,6 +38,13 @@ export function CodeBlockCommand({
       return;
     }
 
+    trackEvent({
+      name: "copy_npm_command",
+      properties: {
+        command,
+        packageManager,
+      },
+    });
     navigator.clipboard.writeText(command);
     setHasCopied(true);
   }, [packageManager, tabs]);
@@ -54,7 +62,7 @@ export function CodeBlockCommand({
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 font-mono text-zinc-400 data-[state=active]:bg-transparent data-[state=active]:text-white dark:data-[state=active]:border-transparent dark:border-b dark:bg-transparent  dark:data-[state=active]:bg-transparent data-[state=active]:border-b-blue-500 dark:data-[state=active]:border-b-blue-500"
+                  className="rounded-none border-b border-transparent bg-transparent p-0 pb-1.5 font-mono text-zinc-400 data-[state=active]:bg-transparent data-[state=active]:text-white dark:data-[state=active]:border-transparent dark:border-b dark:bg-transparent  dark:data-[state=active]:bg-transparent data-[state=active]:border-b-primary dark:data-[state=active]:border-b-primary"
                 >
                   {key}
                 </TabsTrigger>
