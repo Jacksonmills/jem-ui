@@ -1,6 +1,6 @@
 # JEM/UI
 
-A custom component registry built with [Base UI](https://mui.com/base-ui/) primitives and powered by [Shadcn](https://ui.shadcn.com/).
+A component registry built with [Base UI](https://mui.com/base-ui/) primitives and powered by [Shadcn](https://ui.shadcn.com/).
 
 ## Simple to try out!
 
