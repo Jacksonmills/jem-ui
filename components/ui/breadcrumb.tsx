@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from "react";
-import { useRender } from '@base-ui-components/react/use-render';
-import { mergeProps } from '@base-ui-components/react/merge-props';
+import { mergeProps } from "@base-ui-components/react/merge-props";
+import { useRender } from "@base-ui-components/react/use-render";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
       data-slot="breadcrumb-list"
       className={cn(
         "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5",
-        className
+        className,
       )}
       {...props}
     />
@@ -41,24 +41,32 @@ function BreadcrumbLink({
 }: React.ComponentProps<"a"> & {
   asChild?: boolean;
 }) {
-  const defaultProps: useRender.ElementProps<'a'> & {
-    'data-slot': string;
+  const defaultProps: useRender.ElementProps<"a"> & {
+    "data-slot": string;
   } = {
     className: cn("hover:text-foreground transition-colors", className),
-    'data-slot': 'breadcrumb-link',
+    "data-slot": "breadcrumb-link",
   };
 
   const getRender = () => {
     if (asChild) {
-      if (!React.isValidElement(props.children) || React.Children.count(props.children) !== 1) {
-        throw new Error("BreadcrumbLink component expects exactly one React element as a child when 'asChild' is true.");
+      if (
+        !React.isValidElement(props.children) ||
+        React.Children.count(props.children) !== 1
+      ) {
+        throw new Error(
+          "BreadcrumbLink component expects exactly one React element as a child when 'asChild' is true.",
+        );
       }
       return props.children as React.JSX.Element;
     }
     return <a />;
   };
 
-  const { renderElement } = useRender({ render: getRender(), props: mergeProps<'a'>(defaultProps, props) });
+  const { renderElement } = useRender({
+    render: getRender(),
+    props: mergeProps<"a">(defaultProps, props),
+  });
 
   return renderElement();
 }

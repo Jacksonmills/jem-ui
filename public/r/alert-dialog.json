@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog",
   "type": "registry:ui",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
-  "registryDependencies": [
-    "http://localhost:3000/ui/button"
-  ],
+  "dependencies": ["@base-ui-components/react"],
+  "registryDependencies": ["http://localhost:3000/ui/button"],
   "files": [
     {
       "path": "registry/ui/alert-dialog.tsx",

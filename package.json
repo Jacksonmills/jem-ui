@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome lint",
+    "lint:write": "biome lint --write",
+    "format": "biome format",
+    "format:write": "biome format --write",
+    "fix": "biome check --write",
     "registry:build": "shadcn build"
   },
   "dependencies": {
@@ -48,13 +52,11 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@biomejs/biome": "1.9.4",
     "@tailwindcss/postcss": "^4.0.15",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
     "postcss": "^8",
     "tailwindcss": "^4.0.15",
     "typescript": "^5"

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
+import { mergeProps } from "@base-ui-components/react/merge-props";
+import { useRender } from "@base-ui-components/react/use-render";
+import { type VariantProps, cva } from "class-variance-authority";
 import * as React from "react";
-import { useRender } from '@base-ui-components/react/use-render';
-import { mergeProps } from '@base-ui-components/react/merge-props';
-import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 function Button({
@@ -48,24 +48,32 @@ function Button({
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
   }) {
-  const defaultProps: useRender.ElementProps<'button'> & {
-    'data-slot': string;
+  const defaultProps: useRender.ElementProps<"button"> & {
+    "data-slot": string;
   } = {
     className: cn(buttonVariants({ variant, size, className })),
-    'data-slot': 'button',
+    "data-slot": "button",
   };
 
   const getRender = () => {
     if (asChild) {
-      if (!React.isValidElement(props.children) || React.Children.count(props.children) !== 1) {
-        throw new Error("Button component expects exactly one React element as a child when 'asChild' is true.");
+      if (
+        !React.isValidElement(props.children) ||
+        React.Children.count(props.children) !== 1
+      ) {
+        throw new Error(
+          "Button component expects exactly one React element as a child when 'asChild' is true.",
+        );
       }
       return props.children as React.JSX.Element;
     }
     return <button />;
   };
 
-  const { renderElement } = useRender({ render: getRender(), props: mergeProps<'button'>(defaultProps, props) });
+  const { renderElement } = useRender({
+    render: getRender(),
+    props: mergeProps<"button">(defaultProps, props),
+  });
 
   return renderElement();
 }

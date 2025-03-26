@@ -2,13 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command",
   "type": "registry:ui",
-  "dependencies": [
-    "cmdk@1.0.0",
-    "@base-ui-components/react"
-  ],
-  "registryDependencies": [
-    "http://localhost:3000/ui/dialog"
-  ],
+  "dependencies": ["cmdk@1.0.0", "@base-ui-components/react"],
+  "registryDependencies": ["http://localhost:3000/ui/dialog"],
   "files": [
     {
       "path": "registry/ui/command.tsx",

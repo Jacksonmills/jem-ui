@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Sink } from "@/components/demos/sink";
 import { TextLink } from "@/components/text-link";
+import * as React from "react";
 
 export default function Home() {
   return (
@@ -8,7 +8,9 @@ export default function Home() {
       <header className="flex flex-col gap-1">
         <h1 className="text-3xl font-bold tracking-tight">JEM/UI</h1>
         <p className="text-muted-foreground">
-          A <TextLink href="https://ui.shadcn.com/">shadcn</TextLink> based custom registry for using <TextLink href="https://base-ui.com/">Base UI</TextLink> components.
+          A <TextLink href="https://ui.shadcn.com/">shadcn</TextLink> based
+          custom registry for using{" "}
+          <TextLink href="https://base-ui.com/">Base UI</TextLink> components.
         </p>
       </header>
       <main className="flex flex-col flex-1 gap-8">
