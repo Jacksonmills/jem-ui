@@ -15,9 +15,7 @@ export function DialogDemo() {
   return (
     <Dialog>
       <Button variant="outline" asChild>
-        <DialogTrigger >
-          Edit Profile
-        </DialogTrigger>
+        <DialogTrigger>Edit Profile</DialogTrigger>
       </Button>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -31,13 +29,23 @@ export function DialogDemo() {
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" readOnly />
+            <Input
+              id="name"
+              value="Pedro Duarte"
+              className="col-span-3"
+              readOnly
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
               Username
             </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" readOnly />
+            <Input
+              id="username"
+              value="@peduarte"
+              className="col-span-3"
+              readOnly
+            />
           </div>
         </div>
         <DialogFooter>

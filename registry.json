@@ -6,9 +6,7 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/accordion.tsx",
@@ -19,12 +17,8 @@
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/ui/button"
-      ],
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["http://localhost:3000/ui/button"],
       "files": [
         {
           "path": "registry/ui/alert-dialog.tsx",
@@ -35,9 +29,7 @@
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/avatar.tsx",
@@ -48,9 +40,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/breadcrumb.tsx",
@@ -61,9 +51,7 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/button.tsx",
@@ -74,9 +62,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/checkbox.tsx",
@@ -87,9 +73,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/collapsible.tsx",
@@ -100,13 +84,8 @@
     {
       "name": "command",
       "type": "registry:ui",
-      "dependencies": [
-        "cmdk@1.0.0",
-        "@base-ui-components/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/ui/dialog"
-      ],
+      "dependencies": ["cmdk@1.0.0", "@base-ui-components/react"],
+      "registryDependencies": ["http://localhost:3000/ui/dialog"],
       "files": [
         {
           "path": "registry/ui/command.tsx",
@@ -117,9 +96,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/dialog.tsx",
@@ -130,9 +107,7 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/dropdown-menu.tsx",
@@ -143,9 +118,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/hover-card.tsx",
@@ -176,12 +149,8 @@
     {
       "name": "menubar",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/ui/dropdown-menu"
-      ],
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["http://localhost:3000/ui/dropdown-menu"],
       "files": [
         {
           "path": "registry/ui/menubar.tsx",
@@ -192,9 +161,7 @@
     {
       "name": "separator",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui-components/react"
-      ],
+      "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/separator.tsx",

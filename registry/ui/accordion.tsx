@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Accordion as AccordionPrimitive } from '@base-ui-components/react/accordion';
+import { Accordion as AccordionPrimitive } from "@base-ui-components/react/accordion";
 import { ChevronDownIcon } from "lucide-react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -34,7 +34,7 @@ function AccordionTrigger({
         data-slot="accordion-trigger"
         className={cn(
           "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-hidden hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-panel-open]>svg]:rotate-180",
-          className
+          className,
         )}
         {...props}
       >

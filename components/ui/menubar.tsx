@@ -1,11 +1,23 @@
 "use client";
 
-import * as React from "react";
-import { Toolbar as ToolbarPrimitive } from '@base-ui-components/react/toolbar';
+import { Toolbar as ToolbarPrimitive } from "@base-ui-components/react/toolbar";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+import type * as React from "react";
 
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuCheckboxItemIndicator,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuRadioItemIndicator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuCheckboxItemIndicator, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuRadioItemIndicator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 function Menubar({
   className,
@@ -16,16 +28,14 @@ function Menubar({
       data-slot="menubar"
       className={cn(
         "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs w-fit",
-        className
+        className,
       )}
       {...props}
     />
   );
 }
 
-function MenubarMenu({
-  ...props
-}: React.ComponentProps<typeof DropdownMenu>) {
+function MenubarMenu({ ...props }: React.ComponentProps<typeof DropdownMenu>) {
   return <DropdownMenu data-slot="menubar-menu" openOnHover {...props} />;
 }
 
@@ -44,9 +54,7 @@ function MenubarPortal({
 function MenubarRadioGroup({
   ...props
 }: React.ComponentProps<typeof DropdownMenuRadioGroup>) {
-  return (
-    <DropdownMenuRadioGroup data-slot="menubar-radio-group" {...props} />
-  );
+  return <DropdownMenuRadioGroup data-slot="menubar-radio-group" {...props} />;
 }
 
 function MenubarTrigger({
@@ -58,7 +66,7 @@ function MenubarTrigger({
       data-slot="menubar-trigger"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none",
-        className
+        className,
       )}
       render={<DropdownMenuTrigger />}
       {...props}
@@ -184,16 +192,14 @@ function MenubarShortcut({
       data-slot="menubar-shortcut"
       className={cn(
         "text-muted-foreground ml-auto text-xs tracking-widest",
-        className
+        className,
       )}
       {...props}
     />
   );
 }
 
-function MenubarSub({
-  ...props
-}: React.ComponentProps<typeof DropdownMenu>) {
+function MenubarSub({ ...props }: React.ComponentProps<typeof DropdownMenu>) {
   return <DropdownMenu data-slot="menubar-sub" {...props} />;
 }
 
@@ -207,7 +213,7 @@ function MenubarSubTrigger({
       data-slot="menubar-sub-trigger"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none w-full",
-        className
+        className,
       )}
       render={<DropdownMenuTrigger />}
       {...props}

@@ -15,9 +15,7 @@ export function AlertDialogDemo() {
   return (
     <AlertDialog>
       <Button variant="outline" asChild>
-        <AlertDialogTrigger>
-          Show Dialog
-        </AlertDialogTrigger>
+        <AlertDialogTrigger>Show Dialog</AlertDialogTrigger>
       </Button>
       <AlertDialogContent>
         <AlertDialogHeader>

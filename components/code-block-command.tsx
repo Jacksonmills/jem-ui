@@ -1,19 +1,21 @@
 "use client";
 
-import * as React from "react";
-import { CheckIcon, ClipboardIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CheckIcon, ClipboardIcon } from "lucide-react";
 import posthog from "posthog-js";
+import * as React from "react";
 
 export function CodeBlockCommand({
-  component
+  component,
 }: {
   component: string;
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   const [hasCopied, setHasCopied] = React.useState(false);
-  const [packageManager, setPackageManager] = React.useState<"pnpm" | "npm" | "yarn" | "bun">("pnpm");
+  const [packageManager, setPackageManager] = React.useState<
+    "pnpm" | "npm" | "yarn" | "bun"
+  >("pnpm");
 
   React.useEffect(() => {
     if (hasCopied) {
@@ -38,9 +40,9 @@ export function CodeBlockCommand({
       return;
     }
 
-    posthog.capture('copy_npm_command', {
+    posthog.capture("copy_npm_command", {
       command,
-      packageManager
+      packageManager,
     });
 
     navigator.clipboard.writeText(command);
@@ -51,7 +53,9 @@ export function CodeBlockCommand({
     <div className="relative max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900 md:block hidden">
       <Tabs
         value={packageManager}
-        onValueChange={(value) => setPackageManager(value as "pnpm" | "npm" | "yarn" | "bun")}
+        onValueChange={(value) =>
+          setPackageManager(value as "pnpm" | "npm" | "yarn" | "bun")
+        }
       >
         <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 dark:bg-zinc-800 px-3 pt-2.5">
           <TabsList className="h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1">

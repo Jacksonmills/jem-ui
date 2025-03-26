@@ -1,10 +1,6 @@
 import { CalendarIcon } from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   HoverCard,
@@ -16,9 +12,7 @@ export function HoverCardDemo() {
   return (
     <HoverCard>
       <Button variant="link" asChild>
-        <HoverCardTrigger>
-          @nextjs
-        </HoverCardTrigger>
+        <HoverCardTrigger>@nextjs</HoverCardTrigger>
       </Button>
       <HoverCardContent className="w-80" side="top" sideOffset={0}>
         <div className="flex justify-between space-x-4">
