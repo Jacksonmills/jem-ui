@@ -2,11 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible",
   "type": "registry:ui",
-  "dependencies": ["@base-ui-components/react"],
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
   "files": [
     {
       "path": "registry/ui/collapsible.tsx",
-      "content": "\"use client\";\n\nimport { Collapsible as CollapsiblePrimitive } from '@base-ui-components/react/collapsible';\n\nfunction Collapsible({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Trigger>) {\n  return (\n    <CollapsiblePrimitive.Trigger\n      data-slot=\"collapsible-trigger\"\n      {...props}\n    />\n  );\n}\n\nfunction CollapsibleContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Panel> & {\n  className?: string;\n}) {\n  return (\n    <CollapsiblePrimitive.Panel\n      className=\"flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0\"\n      {...props}\n    >\n      <div className={className}>\n        {children}\n      </div>\n    </CollapsiblePrimitive.Panel>\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
+      "content": "\"use client\";\n\nimport { Collapsible as CollapsiblePrimitive } from \"@base-ui-components/react/collapsible\";\n\nfunction Collapsible({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Trigger>) {\n  return (\n    <CollapsiblePrimitive.Trigger data-slot=\"collapsible-trigger\" {...props} />\n  );\n}\n\nfunction CollapsibleContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Panel> & {\n  className?: string;\n}) {\n  return (\n    <CollapsiblePrimitive.Panel\n      className=\"flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0\"\n      {...props}\n    >\n      <div className={className}>{children}</div>\n    </CollapsiblePrimitive.Panel>\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
       "type": "registry:ui"
     }
   ]
