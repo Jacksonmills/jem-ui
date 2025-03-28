@@ -1,15 +1,15 @@
 # JEM/UI
 
-A component registry built with [Base UI](https://mui.com/base-ui/) primitives and powered by [Shadcn](https://ui.shadcn.com/).
+A component registry built with [Base UI](https://mui.com/base-ui/) primitives and powered by [shadcn/ui](https://ui.shadcn.com/).
 
-## Simple to try out!
+## Simple to try
 
-If you're already using Shadcn but have been looking to explore Base UI without the hassle of ripping out Radix-UI, JEM/UI makes it easy! Just initialize your project like any Shadcn setup and seamlessly add Base UI-powered components with the Shadcn CLI.
+If you're already using shadcn/ui but have been looking to explore Base UI without the hassle of ripping out Radix UI, JEM/UI makes it easy! Just initialize your project like any shadcn/ui setup and seamlessly add Base UI-powered components with the shadcn CLI.
 
 ## Table of Contents
 
 - [JEM/UI](#jemui)
-  - [Simple to try out!](#simple-to-try-out)
+  - [Simple to try](#simple-to-try)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Features](#features)
@@ -22,7 +22,7 @@ If you're already using Shadcn but have been looking to explore Base UI without 
 
 ## Introduction
 
-JEM/UI simplifies your development workflow by integrating Base UI primitives directly into a streamlined Shadcn registry. It leverages Shadcn CLI commands, enabling you to quickly scaffold fully-styled, type-safe components directly into your project.
+JEM/UI simplifies your development workflow by integrating Base UI primitives directly into a streamlined shadcn/ui registry. It leverages shadcn CLI commands, enabling you to quickly scaffold fully-styled, type-safe components directly into your project.
 
 ## Features
 
@@ -33,7 +33,7 @@ JEM/UI simplifies your development workflow by integrating Base UI primitives di
 
 ## Quick Start
 
-Use the Shadcn CLI to directly add components to your project:
+Use the shadcn CLI to directly add components to your project:
 
 ### With pnpm (recommended)
 
@@ -55,7 +55,7 @@ bunx --bun shadcn@latest add https://jem-ui.vercel.app/ui/accordion
 
 ## Usage
 
-Once you've added a component using the Shadcn CLI, it's ready to use in your project like any other shadcn component.
+Once you've added a component using the shadcn CLI, it's ready to use in your project like any other shadcn/ui component.
 
 ```tsx
 import {
