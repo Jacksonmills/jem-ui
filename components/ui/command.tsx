@@ -1,5 +1,3 @@
-"use client";
-
 import { ScrollArea } from "@base-ui-components/react/scroll-area";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";

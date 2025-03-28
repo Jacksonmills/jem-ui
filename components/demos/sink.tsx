@@ -8,6 +8,7 @@ import { CommandDialogDemo } from "./command-dialog-demo";
 import { DialogDemo } from "./dialog-demo";
 import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
+import { TabsDemo } from "./tabs-demo";
 
 interface Data {
   displayName: string;
@@ -120,6 +121,18 @@ const data: Data[] = [
       },
     ],
     children: <MenubarDemo />,
+  },
+  {
+    displayName: "Tabs",
+    slug: "tabs",
+    links: [
+      { href: "https://base-ui.com/react/components/tabs", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/tabs#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <TabsDemo />,
   },
 ];
 

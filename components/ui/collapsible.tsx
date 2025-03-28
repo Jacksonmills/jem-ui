@@ -1,5 +1,3 @@
-"use client";
-
 import { Collapsible as CollapsiblePrimitive } from "@base-ui-components/react/collapsible";
 
 function Collapsible({
@@ -25,7 +23,7 @@ function CollapsibleContent({
 }) {
   return (
     <CollapsiblePrimitive.Panel
-      className={`flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0 p-1 -m-1 ${className}`}
+      className="flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0"
       {...props}
     >
       <div className={className}>{children}</div>

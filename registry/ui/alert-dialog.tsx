@@ -1,7 +1,7 @@
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui-components/react/alert-dialog";
 import type * as React from "react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 function AlertDialog({
@@ -120,18 +120,17 @@ function AlertDialogAction({
   className,
   ...props
 }: React.ComponentProps<"button">) {
-  return <button className={cn(buttonVariants(), className)} {...props} />;
+  return <Button className={className} {...props} />;
 }
 
-function AlertDialogClose({
+function AlertDialogCancel({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
   return (
-    <AlertDialogPrimitive.Close
-      className={cn(buttonVariants({ variant: "outline" }), className)}
-      {...props}
-    />
+    <Button variant="outline" asChild>
+      <AlertDialogPrimitive.Close className={className} {...props} />
+    </Button>
   );
 }
 
@@ -146,5 +145,5 @@ export {
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogAction,
-  AlertDialogClose,
+  AlertDialogCancel,
 };
