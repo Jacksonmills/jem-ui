@@ -23,7 +23,7 @@ function CollapsibleContent({
 }) {
   return (
     <CollapsiblePrimitive.Panel
-      className="flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0"
+      className="flex h-[calc(var(--collapsible-panel-height))] flex-col justify-end overflow-hidden text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0 data-[starting-style]:opacity-0 data-[ending-style]:opacity-0 p-1 -m-1"
       {...props}
     >
       <div className={className}>{children}</div>
