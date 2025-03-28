@@ -40,8 +40,7 @@ function HoverCardContent({
         <HoverCardPrimitive.Popup
           data-slot="hover-card-content"
           className={cn(
-            "bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-hidden",
-            "origin-[var(--transform-origin)] shadow-lg outline transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0",
+            "bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-hidden origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0",
             className,
           )}
           {...props}

@@ -6,7 +6,7 @@ export function TextLink({
 }: { children: React.ReactNode; href: string }) {
   return (
     <Button
-      className="text-primary p-0 pb-px dark:bg-muted bg-foreground rounded-none h-fit"
+      className="text-primary p-0 pb-px dark:bg-muted bg-foreground/90 rounded-none h-fit"
       variant="link"
       asChild
     >
