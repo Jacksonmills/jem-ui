@@ -50,16 +50,31 @@ export default function RootLayout({
             </Button>
           </div>
           <div className="isolate">
-            <PostHogProvider>{children}</PostHogProvider>
-            <footer className="text-muted-foreground text-sm p-4 border-t-2 border-dotted">
-              Built by{" "}
-              <TextLink href="https://twitter.com/jacksonmills">JEM</TextLink>.
-              The source code is available on{" "}
-              <TextLink href="https://github.com/Jacksonmills/jem-ui">
-                GitHub
-              </TextLink>
-              .
-            </footer>
+            <PostHogProvider>
+              <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
+                <header className="flex flex-col gap-1">
+                  <h1 className="text-3xl font-bold tracking-tight">JEM/UI</h1>
+                  <p className="text-muted-foreground">
+                    A component registry built with{" "}
+                    <TextLink href="https://base-ui.com/">Base UI</TextLink>{" "}
+                    primitives and powered by{" "}
+                    <TextLink href="https://ui.shadcn.com/">shadcn</TextLink>.
+                  </p>
+                </header>
+                {children}
+                <footer className="text-muted-foreground text-sm p-4 border-t-2 border-dotted">
+                  Built by{" "}
+                  <TextLink href="https://twitter.com/jacksonmills">
+                    JEM
+                  </TextLink>
+                  . The source code is available on{" "}
+                  <TextLink href="https://github.com/Jacksonmills/jem-ui">
+                    GitHub
+                  </TextLink>
+                  .
+                </footer>
+              </div>
+            </PostHogProvider>
           </div>
         </ThemeProvider>
         <SpeedInsights />
