@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react";
+import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,8 +16,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuGroupLabel,
+  DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,

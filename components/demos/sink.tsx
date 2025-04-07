@@ -4,17 +4,17 @@ import { AccordionDemo } from "./accordion-demo";
 import { AlertDialogDemo } from "./alert-dialog-demo";
 import { BreadcrumbDemo } from "./breadcrumb-demo";
 import { CollapsibleDemo } from "./collapsible-demo";
+import { ComboboxDemo } from "./combobox-demo";
 import { CommandDialogDemo } from "./command-dialog-demo";
+import { DatePickerDemo } from "./date-picker-demo";
 import { DialogDemo } from "./dialog-demo";
+import { DropdownMenuDemo } from "./dropdown-menu-demo";
 import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
-import { TabsDemo } from "./tabs-demo";
-import { PopoverDemo } from "./popover-demo";
-import { ComboboxDemo } from "./combobox-demo";
-import { DropdownMenuDemo } from "./dropdown-menu-demo";
 import { ComboboxPopover } from "./popover-combobox-demo";
-import { DatePickerDemo } from "./date-picker-demo";
+import { PopoverDemo } from "./popover-demo";
 import { SheetDemo } from "./sheet-demo";
+import { TabsDemo } from "./tabs-demo";
 
 interface Data {
   displayName: string;
