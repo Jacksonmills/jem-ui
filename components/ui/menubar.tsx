@@ -7,8 +7,8 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuCheckboxItemIndicator,
   DropdownMenuContent,
+  DropdownMenuGroupLabel,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
@@ -151,15 +151,15 @@ function MenubarRadioItem({
   );
 }
 
-function MenubarLabel({
+function MenubarGroupLabel({
   className,
   inset,
   ...props
-}: React.ComponentProps<typeof DropdownMenuLabel> & {
+}: React.ComponentProps<typeof DropdownMenuGroupLabel> & {
   inset?: boolean;
 }) {
   return (
-    <DropdownMenuLabel
+    <DropdownMenuGroupLabel
       data-slot="menubar-label"
       data-inset={inset}
       className={className}
@@ -245,7 +245,7 @@ export {
   MenubarContent,
   MenubarGroup,
   MenubarSeparator,
-  MenubarLabel,
+  MenubarGroupLabel,
   MenubarItem,
   MenubarShortcut,
   MenubarCheckboxItem,
