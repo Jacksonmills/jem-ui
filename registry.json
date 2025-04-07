@@ -1,8 +1,19 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "JEM/UI",
+  "homepage": "https://jem-ui.vercel.app",
   "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [],
+      "cssVars": {}
+    },
     {
       "name": "accordion",
       "type": "registry:ui",
@@ -176,6 +187,17 @@
       "files": [
         {
           "path": "registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/sheet.tsx",
           "type": "registry:ui"
         }
       ]

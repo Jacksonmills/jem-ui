@@ -10,6 +10,11 @@ import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
 import { TabsDemo } from "./tabs-demo";
 import { PopoverDemo } from "./popover-demo";
+import { ComboboxDemo } from "./combobox-demo";
+import { DropdownMenuDemo } from "./dropdown-menu-demo";
+import { ComboboxPopover } from "./popover-combobox-demo";
+import { DatePickerDemo } from "./date-picker-demo";
+import { SheetDemo } from "./sheet-demo";
 
 interface Data {
   displayName: string;
@@ -70,6 +75,14 @@ const data: Data[] = [
     ],
     children: <CollapsibleDemo />,
   },
+  // {
+  //   displayName: "Combobox",
+  //   slug: "combobox",
+  //   links: [
+  //     { href: "https://ui.shadcn.com/docs/components/combobox", label: "Docs" },
+  //   ],
+  //   children: <ComboboxDemo />,
+  // },
   {
     displayName: "Command Dialog",
     slug: "command-dialog",
@@ -82,6 +95,21 @@ const data: Data[] = [
     ],
     children: <CommandDialogDemo />,
   },
+  // {
+  //   displayName: "Date Picker",
+  //   slug: "date-picker",
+  //   links: [
+  //     {
+  //       href: "https://base-ui.com/react/components/date-picker",
+  //       label: "Docs",
+  //     },
+  //     {
+  //       href: "https://base-ui.com/react/components/date-picker#api-reference",
+  //       label: "API Reference",
+  //     },
+  //   ],
+  //   children: <DatePickerDemo />,
+  // },
   {
     displayName: "Dialog",
     slug: "dialog",
@@ -93,6 +121,21 @@ const data: Data[] = [
       },
     ],
     children: <DialogDemo />,
+  },
+  {
+    displayName: "Dropdown Menu",
+    slug: "dropdown-menu",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/dropdown-menu",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/dropdown-menu#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <DropdownMenuDemo />,
   },
   {
     displayName: "Hover Card",
@@ -134,6 +177,18 @@ const data: Data[] = [
       },
     ],
     children: <PopoverDemo />,
+  },
+  {
+    displayName: "Sheet",
+    slug: "sheet",
+    links: [
+      { href: "https://base-ui.com/react/components/sheet", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/sheet#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <SheetDemo />,
   },
   {
     displayName: "Tabs",

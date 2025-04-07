@@ -81,13 +81,11 @@ function CommandList({
   return (
     <ScrollArea.Root>
       <ScrollArea.Viewport>
-        <div className="pr-6">
-          <CommandPrimitive.List
-            data-slot="command-list"
-            className={cn("max-h-[300px]", className)}
-            {...props}
-          />
-        </div>
+        <CommandPrimitive.List
+          data-slot="command-list"
+          className={cn("max-h-[300px]", className)}
+          {...props}
+        />
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar className="m-2 flex w-1 justify-center rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[hovering]:delay-0 data-[hovering]:duration-75 data-[scrolling]:opacity-100 data-[scrolling]:delay-0 data-[scrolling]:duration-75">
         <ScrollArea.Thumb className="w-full rounded bg-muted-foreground" />

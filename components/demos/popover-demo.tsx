@@ -10,9 +10,7 @@ import {
 export function PopoverDemo() {
   return (
     <Popover>
-      <PopoverTrigger render={<Button variant="outline" />}>
-        Open popover
-      </PopoverTrigger>
+      <PopoverTrigger>Open popover</PopoverTrigger>
       <PopoverContent className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
