@@ -3,7 +3,7 @@
 import { mergeProps } from "@base-ui-components/react/merge-props";
 import { useRender } from "@base-ui-components/react/use-render";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -35,11 +35,11 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 function BreadcrumbLink({
-  asChild,
+  render = <a />,
   className,
   ...props
 }: React.ComponentProps<"a"> & {
-  asChild?: boolean;
+  render?: React.JSX.Element;
 }) {
   const defaultProps: useRender.ElementProps<"a"> & {
     "data-slot": string;
@@ -48,23 +48,8 @@ function BreadcrumbLink({
     "data-slot": "breadcrumb-link",
   };
 
-  const getRender = () => {
-    if (asChild) {
-      if (
-        !React.isValidElement(props.children) ||
-        React.Children.count(props.children) !== 1
-      ) {
-        throw new Error(
-          "BreadcrumbLink component expects exactly one React element as a child when 'asChild' is true.",
-        );
-      }
-      return props.children as React.JSX.Element;
-    }
-    return <a />;
-  };
-
   const { renderElement } = useRender({
-    render: getRender(),
+    render,
     props: mergeProps<"a">(defaultProps, props),
   });
 

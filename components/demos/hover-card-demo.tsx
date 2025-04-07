@@ -11,9 +11,10 @@ import {
 export function HoverCardDemo() {
   return (
     <HoverCard>
-      <Button variant="link" asChild>
-        <HoverCardTrigger>@nextjs</HoverCardTrigger>
-      </Button>
+      <Button
+        variant="link"
+        render={<HoverCardTrigger>@nextjs</HoverCardTrigger>}
+      />
       <HoverCardContent className="w-80" side="top" sideOffset={0}>
         <div className="flex justify-between space-x-4">
           <Avatar>

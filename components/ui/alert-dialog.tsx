@@ -128,9 +128,10 @@ function AlertDialogCancel({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
   return (
-    <Button variant="outline" asChild>
-      <AlertDialogPrimitive.Close className={className} {...props} />
-    </Button>
+    <Button
+      variant="outline"
+      render={<AlertDialogPrimitive.Close className={className} {...props} />}
+    />
   );
 }
 

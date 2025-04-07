@@ -9,6 +9,7 @@ import { DialogDemo } from "./dialog-demo";
 import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
 import { TabsDemo } from "./tabs-demo";
+import { PopoverDemo } from "./popover-demo";
 
 interface Data {
   displayName: string;
@@ -121,6 +122,18 @@ const data: Data[] = [
       },
     ],
     children: <MenubarDemo />,
+  },
+  {
+    displayName: "Popover",
+    slug: "popover",
+    links: [
+      { href: "https://base-ui.com/react/components/popover", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/popover#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <PopoverDemo />,
   },
   {
     displayName: "Tabs",

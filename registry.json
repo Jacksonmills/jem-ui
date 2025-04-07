@@ -159,6 +159,17 @@
       ]
     },
     {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],

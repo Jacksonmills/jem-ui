@@ -14,9 +14,10 @@ import { Label } from "@/components/ui/label";
 export function DialogDemo() {
   return (
     <Dialog>
-      <Button variant="outline" asChild>
-        <DialogTrigger>Edit Profile</DialogTrigger>
-      </Button>
+      <Button
+        variant="outline"
+        render={<DialogTrigger>Edit Profile</DialogTrigger>}
+      />
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>

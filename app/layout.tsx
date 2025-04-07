@@ -43,11 +43,16 @@ export default function RootLayout({
         >
           <div className="flex flex-col items-center justify-center fixed top-4 right-4 z-50 bg-muted/50 rounded-full p-1">
             <ModeToggle />
-            <Button className="h-7 w-7" size="icon" variant="ghost" asChild>
-              <a href="https://github.com/Jacksonmills/jem-ui">
-                <Icons.gitHub className="w-6 h-6" />
-              </a>
-            </Button>
+            <Button
+              className="h-7 w-7"
+              size="icon"
+              variant="ghost"
+              render={
+                <a href="https://github.com/Jacksonmills/jem-ui">
+                  <Icons.gitHub className="w-6 h-6" />
+                </a>
+              }
+            />
           </div>
           <div className="isolate">
             <PostHogProvider>

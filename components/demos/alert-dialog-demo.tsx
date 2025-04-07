@@ -14,9 +14,10 @@ import { Button } from "@/components/ui/button";
 export function AlertDialogDemo() {
   return (
     <AlertDialog>
-      <Button variant="outline" asChild>
-        <AlertDialogTrigger>Show Dialog</AlertDialogTrigger>
-      </Button>
+      <Button
+        variant="outline"
+        render={<AlertDialogTrigger>Show Dialog</AlertDialogTrigger>}
+      />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
