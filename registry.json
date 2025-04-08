@@ -29,7 +29,7 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["http://localhost:3000/ui/button"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/ui/alert-dialog.tsx",
@@ -96,7 +96,7 @@
       "name": "command",
       "type": "registry:ui",
       "dependencies": ["cmdk@1.0.0", "@base-ui-components/react"],
-      "registryDependencies": ["http://localhost:3000/ui/dialog"],
+      "registryDependencies": ["dialog"],
       "files": [
         {
           "path": "registry/ui/command.tsx",
@@ -161,7 +161,7 @@
       "name": "menubar",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["http://localhost:3000/ui/dropdown-menu"],
+      "registryDependencies": ["dropdown-menu"],
       "files": [
         {
           "path": "registry/ui/menubar.tsx",

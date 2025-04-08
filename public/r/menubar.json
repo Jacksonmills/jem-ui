@@ -6,7 +6,7 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "http://localhost:3000/ui/dropdown-menu"
+    "dropdown-menu"
   ],
   "files": [
     {
