@@ -33,6 +33,9 @@
       },
       "suspicious": {
         "noArrayIndexKey": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   },

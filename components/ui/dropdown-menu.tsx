@@ -264,7 +264,7 @@ function DropdownMenuSubTrigger({
 
 function DropdownMenuSubContent({
   className,
-  sideOffset = 4,
+  sideOffset = 8,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
   sideOffset?: number | (() => number);

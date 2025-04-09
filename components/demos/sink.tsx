@@ -15,6 +15,7 @@ import { ComboboxPopover } from "./popover-combobox-demo";
 import { PopoverDemo } from "./popover-demo";
 import { SheetDemo } from "./sheet-demo";
 import { TabsDemo } from "./tabs-demo";
+import { ProgressDemo } from "./progress-demo";
 
 interface Data {
   displayName: string;
@@ -177,6 +178,18 @@ const data: Data[] = [
       },
     ],
     children: <PopoverDemo />,
+  },
+  {
+    displayName: "Progress",
+    slug: "progress",
+    links: [
+      { href: "https://base-ui.com/react/components/progress", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/progress#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <ProgressDemo />,
   },
   {
     displayName: "Sheet",

@@ -17,6 +17,8 @@ If you're already using shadcn/ui but have been looking to explore Base UI witho
     - [With pnpm (recommended)](#with-pnpm-recommended)
     - [Alternative package managers](#alternative-package-managers)
   - [Usage](#usage)
+  - [Unsupported components](#unsupported-components)
+  - [TODO](#todo)
   - [Full Documentation](#full-documentation)
   - [License](#license)
 
@@ -91,6 +93,14 @@ export function AccordionDemo() {
   );
 }
 ```
+
+## Unsupported components
+- Aspect Ratio
+- Context Menu
+
+## TODO
+- Form
+- Navigation Menu
 
 ## Full Documentation
 

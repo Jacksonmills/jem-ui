@@ -6,7 +6,6 @@
       "name": "index",
       "type": "registry:style",
       "dependencies": [
-        "tw-animate-css",
         "class-variance-authority",
         "lucide-react"
       ],
@@ -38,12 +37,33 @@
       ]
     },
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -66,6 +86,39 @@
       "files": [
         {
           "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/ui/carousel.tsx",
           "type": "registry:ui"
         }
       ]
@@ -111,6 +164,17 @@
       "files": [
         {
           "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "dependencies": ["vaul"],
+      "files": [
+        {
+          "path": "registry/ui/drawer.tsx",
           "type": "registry:ui"
         }
       ]
@@ -170,12 +234,34 @@
       ]
     },
     {
+      "name": "pagination",
+      "type": "registry:ui",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
       "files": [
         {
           "path": "registry/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/progress.tsx",
           "type": "registry:ui"
         }
       ]
