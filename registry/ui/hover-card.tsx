@@ -26,7 +26,7 @@ function HoverCardContent({
 }: React.ComponentProps<typeof HoverCardPrimitive.Popup> & {
   align?: "start" | "center" | "end";
   side?: "top" | "right" | "bottom" | "left";
-  sideOffset?: number | (() => number);
+  sideOffset?: number;
 }) {
   return (
     <HoverCardPrimitive.Portal data-slot="hover-card-portal">

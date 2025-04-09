@@ -42,7 +42,7 @@ function DropdownMenuContent({
   sideOffset = 4,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
-  sideOffset?: number | (() => number);
+  sideOffset?: number;
   align?: "start" | "center" | "end";
 }) {
   return (
@@ -267,7 +267,7 @@ function DropdownMenuSubContent({
   sideOffset = 8,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
-  sideOffset?: number | (() => number);
+  sideOffset?: number;
 }) {
   return (
     <DropdownMenuPrimitive.Portal>

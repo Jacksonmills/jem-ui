@@ -16,6 +16,10 @@ import { PopoverDemo } from "./popover-demo";
 import { SheetDemo } from "./sheet-demo";
 import { TabsDemo } from "./tabs-demo";
 import { ProgressDemo } from "./progress-demo";
+import { RadioGroupDemo } from "./radio-group-demo";
+import { ScrollAreaDemo } from "./scroll-area-demo";
+import { SelectDemo } from "./select-demo";
+import { SliderDemo } from "./slider-demo";
 
 interface Data {
   displayName: string;
@@ -192,6 +196,48 @@ const data: Data[] = [
     children: <ProgressDemo />,
   },
   {
+    displayName: "Radio Group",
+    slug: "radio-group",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/radio-group",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/radio-group#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <RadioGroupDemo />,
+  },
+  {
+    displayName: "Scroll Area",
+    slug: "scroll-area",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/scroll-area",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/scroll-area#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <ScrollAreaDemo />,
+  },
+  {
+    displayName: "Select",
+    slug: "select",
+    links: [
+      { href: "https://base-ui.com/react/components/select", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/select#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <SelectDemo />,
+  },
+  {
     displayName: "Sheet",
     slug: "sheet",
     links: [
@@ -202,6 +248,18 @@ const data: Data[] = [
       },
     ],
     children: <SheetDemo />,
+  },
+  {
+    displayName: "Slider",
+    slug: "slider",
+    links: [
+      { href: "https://base-ui.com/react/components/slider", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/slider#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <SliderDemo />,
   },
   {
     displayName: "Tabs",
