@@ -1,9 +1,9 @@
 "use client";
 
-import type * as React from "react";
 import { Radio } from "@base-ui-components/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui-components/react/radio-group";
 import { CircleIcon } from "lucide-react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 

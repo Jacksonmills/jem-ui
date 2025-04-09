@@ -5,10 +5,7 @@
     {
       "name": "index",
       "type": "registry:style",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react"],
       "registryDependencies": ["utils"],
       "files": [],
       "cssVars": {}

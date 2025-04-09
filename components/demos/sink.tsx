@@ -13,13 +13,13 @@ import { HoverCardDemo } from "./hover-card-demo";
 import { MenubarDemo } from "./menubar-demo";
 import { ComboboxPopover } from "./popover-combobox-demo";
 import { PopoverDemo } from "./popover-demo";
-import { SheetDemo } from "./sheet-demo";
-import { TabsDemo } from "./tabs-demo";
 import { ProgressDemo } from "./progress-demo";
 import { RadioGroupDemo } from "./radio-group-demo";
 import { ScrollAreaDemo } from "./scroll-area-demo";
 import { SelectDemo } from "./select-demo";
+import { SheetDemo } from "./sheet-demo";
 import { SliderDemo } from "./slider-demo";
+import { TabsDemo } from "./tabs-demo";
 
 interface Data {
   displayName: string;

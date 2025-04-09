@@ -4,11 +4,11 @@ import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectItem,
   SelectGroupLabel,
+  SelectItem,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
-  SelectSeparator,
 } from "@/components/ui/select";
 
 export function SelectDemo() {
