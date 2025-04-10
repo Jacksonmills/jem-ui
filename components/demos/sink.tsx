@@ -2,7 +2,12 @@ import * as React from "react";
 import { DemoCard } from "../demo-card";
 import { AccordionDemo } from "./accordion-demo";
 import { AlertDialogDemo } from "./alert-dialog-demo";
+import { AvatarDemo } from "./avatar-demo";
+import { BadgeDemo } from "./badge-demo";
 import { BreadcrumbDemo } from "./breadcrumb-demo";
+import { ButtonDemo } from "./button-demo";
+import { CalendarDemo } from "./calendar-demo";
+import { CheckboxDemo } from "./checkbox-demo";
 import { CollapsibleDemo } from "./collapsible-demo";
 import { ComboboxDemo } from "./combobox-demo";
 import { CommandDialogDemo } from "./command-dialog-demo";
@@ -10,6 +15,7 @@ import { DatePickerDemo } from "./date-picker-demo";
 import { DialogDemo } from "./dialog-demo";
 import { DropdownMenuDemo } from "./dropdown-menu-demo";
 import { HoverCardDemo } from "./hover-card-demo";
+import { InputDemo } from "./input-demo";
 import { MenubarDemo } from "./menubar-demo";
 import { ComboboxPopover } from "./popover-combobox-demo";
 import { PopoverDemo } from "./popover-demo";
@@ -19,7 +25,11 @@ import { ScrollAreaDemo } from "./scroll-area-demo";
 import { SelectDemo } from "./select-demo";
 import { SheetDemo } from "./sheet-demo";
 import { SliderDemo } from "./slider-demo";
+import { SwitchDemo } from "./switch-demo";
 import { TabsDemo } from "./tabs-demo";
+import { ToggleDemo } from "./toggle-demo";
+import { ToggleGroupDemo } from "./toggle-group-demo";
+import { TooltipDemo } from "./tooltip-demo";
 
 interface Data {
   displayName: string;
@@ -58,12 +68,72 @@ const data: Data[] = [
     children: <AlertDialogDemo />,
   },
   {
+    displayName: "Avatar",
+    slug: "avatar",
+    links: [
+      { href: "https://base-ui.com/react/components/avatar", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/avatar#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <AvatarDemo />,
+  },
+  {
+    displayName: "Badge",
+    slug: "badge",
+    links: [
+      { href: "https://base-ui.com/react/components/badge", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/badge#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <BadgeDemo />,
+  },
+  {
     displayName: "Breadcrumb",
     slug: "breadcrumb",
     links: [
       { href: "https://base-ui.com/react/utils/use-render", label: "Docs" },
     ],
     children: <BreadcrumbDemo />,
+  },
+  {
+    displayName: "Button",
+    slug: "button",
+    links: [
+      { href: "https://base-ui.com/react/components/button", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/button#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <ButtonDemo />,
+  },
+  {
+    displayName: "Calendar",
+    slug: "calendar",
+    links: [
+      { href: "https://base-ui.com/react/components/calendar", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/calendar#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <CalendarDemo />,
+  },
+  {
+    displayName: "Checkbox",
+    slug: "checkbox",
+    links: [
+      { href: "https://base-ui.com/react/components/checkbox", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/checkbox#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <CheckboxDemo />,
   },
   {
     displayName: "Collapsible",
@@ -80,14 +150,6 @@ const data: Data[] = [
     ],
     children: <CollapsibleDemo />,
   },
-  // {
-  //   displayName: "Combobox",
-  //   slug: "combobox",
-  //   links: [
-  //     { href: "https://ui.shadcn.com/docs/components/combobox", label: "Docs" },
-  //   ],
-  //   children: <ComboboxDemo />,
-  // },
   {
     displayName: "Command Dialog",
     slug: "command-dialog",
@@ -100,21 +162,6 @@ const data: Data[] = [
     ],
     children: <CommandDialogDemo />,
   },
-  // {
-  //   displayName: "Date Picker",
-  //   slug: "date-picker",
-  //   links: [
-  //     {
-  //       href: "https://base-ui.com/react/components/date-picker",
-  //       label: "Docs",
-  //     },
-  //     {
-  //       href: "https://base-ui.com/react/components/date-picker#api-reference",
-  //       label: "API Reference",
-  //     },
-  //   ],
-  //   children: <DatePickerDemo />,
-  // },
   {
     displayName: "Dialog",
     slug: "dialog",
@@ -156,6 +203,18 @@ const data: Data[] = [
       },
     ],
     children: <HoverCardDemo />,
+  },
+  {
+    displayName: "Input",
+    slug: "input",
+    links: [
+      { href: "https://base-ui.com/react/components/input", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/input#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <InputDemo />,
   },
   {
     displayName: "Menubar",
@@ -262,6 +321,18 @@ const data: Data[] = [
     children: <SliderDemo />,
   },
   {
+    displayName: "Switch",
+    slug: "switch",
+    links: [
+      { href: "https://base-ui.com/react/components/switch", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/switch#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <SwitchDemo />,
+  },
+  {
     displayName: "Tabs",
     slug: "tabs",
     links: [
@@ -272,6 +343,45 @@ const data: Data[] = [
       },
     ],
     children: <TabsDemo />,
+  },
+  {
+    displayName: "Toggle",
+    slug: "toggle",
+    links: [
+      { href: "https://base-ui.com/react/components/toggle", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/toggle#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <ToggleDemo />,
+  },
+  {
+    displayName: "Toggle Group",
+    slug: "toggle-group",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/toggle-group",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/toggle-group#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <ToggleGroupDemo />,
+  },
+  {
+    displayName: "Tooltip",
+    slug: "tooltip",
+    links: [
+      { href: "https://base-ui.com/react/components/tooltip", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/tooltip#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <TooltipDemo />,
   },
 ];
 

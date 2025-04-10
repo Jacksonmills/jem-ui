@@ -5,7 +5,11 @@
     {
       "name": "index",
       "type": "registry:style",
-      "dependencies": ["class-variance-authority", "lucide-react"],
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
       "registryDependencies": ["utils"],
       "files": [],
       "cssVars": {}
@@ -116,6 +120,17 @@
       "files": [
         {
           "path": "registry/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "dependencies": ["recharts"],
+      "files": [
+        {
+          "path": "registry/ui/chart.tsx",
           "type": "registry:ui"
         }
       ]
@@ -330,6 +345,17 @@
       ]
     },
     {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "tabs",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
@@ -346,6 +372,40 @@
       "files": [
         {
           "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["toggle"],
+      "files": [
+        {
+          "path": "registry/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
           "type": "registry:ui"
         }
       ]

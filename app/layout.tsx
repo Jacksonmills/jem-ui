@@ -67,18 +67,16 @@ export default function RootLayout({
                   </p>
                 </header>
                 {children}
-                <footer className="text-muted-foreground text-sm p-4 border-t-2 border-dotted">
-                  Built by{" "}
-                  <TextLink href="https://twitter.com/jacksonmills">
-                    JEM
-                  </TextLink>
-                  . The source code is available on{" "}
-                  <TextLink href="https://github.com/Jacksonmills/jem-ui">
-                    GitHub
-                  </TextLink>
-                  .
-                </footer>
               </div>
+              <footer className="text-muted-foreground text-sm p-4 border-t-2 border-dotted">
+                Built by{" "}
+                <TextLink href="https://twitter.com/jacksonmills">JEM</TextLink>
+                . The source code is available on{" "}
+                <TextLink href="https://github.com/Jacksonmills/jem-ui">
+                  GitHub
+                </TextLink>
+                .
+              </footer>
             </PostHogProvider>
           </div>
         </ThemeProvider>
