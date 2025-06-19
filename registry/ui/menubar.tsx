@@ -1,4 +1,4 @@
-import { Toolbar as ToolbarPrimitive } from "@base-ui-components/react/toolbar";
+import { Menubar as MenubarPrimitive } from "@base-ui-components/react/menubar";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 import type * as React from "react";
 
@@ -7,12 +7,14 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuCheckboxItemIndicator,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuGroupLabel,
   DropdownMenuItem,
   DropdownMenuPortal,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuRadioItemIndicator,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
@@ -20,9 +22,9 @@ import { cn } from "@/lib/utils";
 function Menubar({
   className,
   ...props
-}: React.ComponentProps<typeof ToolbarPrimitive.Root>) {
+}: React.ComponentProps<typeof MenubarPrimitive>) {
   return (
-    <ToolbarPrimitive.Root
+    <MenubarPrimitive
       data-slot="menubar"
       className={cn(
         "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs w-fit",
@@ -39,8 +41,8 @@ function MenubarMenu({ ...props }: React.ComponentProps<typeof DropdownMenu>) {
 
 function MenubarGroup({
   ...props
-}: React.ComponentProps<typeof ToolbarPrimitive.Group>) {
-  return <ToolbarPrimitive.Group data-slot="menubar-group" {...props} />;
+}: React.ComponentProps<typeof DropdownMenuGroup>) {
+  return <DropdownMenuGroup data-slot="menubar-group" {...props} />;
 }
 
 function MenubarPortal({
@@ -58,15 +60,14 @@ function MenubarRadioGroup({
 function MenubarTrigger({
   className,
   ...props
-}: React.ComponentProps<typeof ToolbarPrimitive.Button>) {
+}: React.ComponentProps<typeof DropdownMenuTrigger>) {
   return (
-    <ToolbarPrimitive.Button
+    <DropdownMenuTrigger
       data-slot="menubar-trigger"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none",
         className,
       )}
-      render={<DropdownMenuTrigger />}
       {...props}
     />
   );
@@ -171,9 +172,9 @@ function MenubarGroupLabel({
 function MenubarSeparator({
   className,
   ...props
-}: React.ComponentProps<typeof ToolbarPrimitive.Separator>) {
+}: React.ComponentProps<typeof DropdownMenuSeparator>) {
   return (
-    <ToolbarPrimitive.Separator
+    <DropdownMenuSeparator
       data-slot="menubar-separator"
       className={cn("bg-border -mx-1 my-1 h-px", className)}
       {...props}
@@ -205,20 +206,19 @@ function MenubarSubTrigger({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof ToolbarPrimitive.Button>) {
+}: React.ComponentProps<typeof DropdownMenuTrigger>) {
   return (
-    <ToolbarPrimitive.Button
+    <DropdownMenuTrigger
       data-slot="menubar-sub-trigger"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none w-full",
         className,
       )}
-      render={<DropdownMenuTrigger />}
       {...props}
     >
       {children}
       <ChevronRightIcon className="ml-auto h-4 w-4" />
-    </ToolbarPrimitive.Button>
+    </DropdownMenuTrigger>
   );
 }
 
