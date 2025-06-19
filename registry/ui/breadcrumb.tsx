@@ -48,12 +48,12 @@ function BreadcrumbLink({
     "data-slot": "breadcrumb-link",
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"a">(defaultProps, props),
   });
 
-  return renderElement();
+  return element;
 }
 
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
