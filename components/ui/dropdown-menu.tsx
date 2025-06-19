@@ -47,15 +47,11 @@ function DropdownMenuContent({
 }) {
   return (
     <DropdownMenuPrimitive.Portal>
-      <DropdownMenuPrimitive.Positioner
-        className="outline-hidden"
-        sideOffset={sideOffset}
-        align={align}
-      >
+      <DropdownMenuPrimitive.Positioner sideOffset={sideOffset} align={align}>
         <DropdownMenuPrimitive.Popup
           data-slot="dropdown-menu-content"
           className={cn(
-            "origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 bg-popover text-popover-foreground rounded-md border p-1 shadow-md outline-hidden relative",
+            "origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 bg-popover text-popover-foreground rounded-md border p-1 shadow-md relative outline-hidden",
             className,
           )}
           {...props}
@@ -264,22 +260,17 @@ function DropdownMenuSubTrigger({
 
 function DropdownMenuSubContent({
   className,
-  sideOffset = 8,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
   sideOffset?: number;
 }) {
   return (
     <DropdownMenuPrimitive.Portal>
-      <DropdownMenuPrimitive.Positioner
-        className="outline-hidden"
-        sideOffset={sideOffset}
-      >
+      <DropdownMenuPrimitive.Positioner>
         <DropdownMenuPrimitive.Popup
           data-slot="dropdown-menu-sub-content"
           className={cn(
-            "bg-popover text-popover-foreground data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] rounded-md border p-1 shadow-md outline-hidden",
-            "origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0",
+            "bg-popover text-popover-foreground data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] rounded-md border p-1 shadow-md origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0 outline-hidden",
             className,
           )}
           {...props}

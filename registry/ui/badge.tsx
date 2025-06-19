@@ -42,11 +42,11 @@ function Badge({
     "data-slot": "badge",
   };
 
-  const { renderElement } = useRender({
+  const element = useRender({
     render,
     props: mergeProps<"span">(defaultProps, props),
   });
-  return renderElement();
+  return element;
 }
 
 export { Badge, badgeVariants };

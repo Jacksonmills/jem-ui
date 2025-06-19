@@ -98,7 +98,6 @@ export function AccordionDemo() {
 
 ## Unsupported components that have no equivalent in Base UI:
 - Aspect Ratio
-- Context Menu
 
 ## Bugged using calendar/command inside a Base UI popover:
 ### TODO: Report these to Base UI:

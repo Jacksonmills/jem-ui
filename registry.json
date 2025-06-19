@@ -170,6 +170,17 @@
       ]
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "files": [
+        {
+          "path": "registry/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
