@@ -167,7 +167,10 @@ const data: Data[] = [
     displayName: "Context Menu",
     slug: "context-menu",
     links: [
-      { href: "https://base-ui.com/react/components/context-menu", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/context-menu",
+        label: "Docs",
+      },
       {
         href: "https://base-ui.com/react/components/context-menu#api-reference",
         label: "API Reference",
