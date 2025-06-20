@@ -224,13 +224,12 @@ function MenubarSubTrigger({
 
 function MenubarSubContent({
   className,
-  sideOffset = 8,
   ...props
 }: React.ComponentProps<typeof DropdownMenuContent>) {
   return (
     <DropdownMenuContent
       data-slot="menubar-sub-content"
-      sideOffset={sideOffset}
+      sideOffset={0}
       className={className}
       {...props}
     />
