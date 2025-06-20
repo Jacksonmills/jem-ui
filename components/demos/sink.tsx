@@ -31,6 +31,7 @@ import { ToggleDemo } from "./toggle-demo";
 import { ToggleGroupDemo } from "./toggle-group-demo";
 import { TooltipDemo } from "./tooltip-demo";
 import { ContextMenuDemo } from "./context-menu-demo";
+import { NavigationMenuDemo } from "./navigation-menu-demo";
 
 interface Data {
   displayName: string;
@@ -167,7 +168,10 @@ const data: Data[] = [
     displayName: "Context Menu",
     slug: "context-menu",
     links: [
-      { href: "https://base-ui.com/react/components/context-menu", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/context-menu",
+        label: "Docs",
+      },
       {
         href: "https://base-ui.com/react/components/context-menu#api-reference",
         label: "API Reference",
@@ -242,6 +246,21 @@ const data: Data[] = [
       },
     ],
     children: <MenubarDemo />,
+  },
+  {
+    displayName: "Navigation Menu",
+    slug: "navigation-menu",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/navigation-menu",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/navigation-menu#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <NavigationMenuDemo />,
   },
   {
     displayName: "Popover",
