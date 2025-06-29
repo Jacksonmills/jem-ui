@@ -1,11 +1,20 @@
-"use client";
-
-import { AspectRatio as AspectRatioPrimitive } from "@base-ui-components/react/aspect-ratio";
+import { cn } from "@/lib/utils";
 
 function AspectRatio({
+  ratio = 1 / 1,
+  className,
   ...props
-}: React.ComponentProps<typeof AspectRatioPrimitive>) {
-  return <AspectRatioPrimitive data-slot="aspect-ratio" {...props} />;
+}: React.ComponentProps<"div"> & {
+  ratio?: number;
+}) {
+  return (
+    <div
+      data-slot="aspect-ratio"
+      className={cn("relative", className)}
+      style={{ aspectRatio: ratio }}
+      {...props}
+    />
+  );
 }
 
 export { AspectRatio };

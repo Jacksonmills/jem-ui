@@ -14,7 +14,7 @@
     "registry:build": "shadcn build"
   },
   "dependencies": {
-    "@base-ui-components/react": "https://pkg.pr.new/@base-ui-components/react@2190",
+    "@base-ui-components/react": "1.0.0-beta.0",
     "@hookform/resolvers": "^4.1.3",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
     "@radix-ui/react-checkbox": "^1.1.4",
