@@ -17,7 +17,6 @@ If you're already using shadcn/ui but have been looking to explore Base UI witho
     - [With pnpm (recommended)](#with-pnpm-recommended)
     - [Alternative package managers](#alternative-package-managers)
   - [Usage](#usage)
-  - [Unsupported components that have no equivalent in Base UI:](#unsupported-components-that-have-no-equivalent-in-base-ui)
   - [Bugged using calendar/command inside a Base UI popover:](#bugged-using-calendarcommand-inside-a-base-ui-popover)
     - [TODO: Report these to Base UI:](#todo-report-these-to-base-ui)
   - [TODO: Either these components do not use Radix or Base UI primitives, or they are not yet supported and need a custom implementation:](#todo-either-these-components-do-not-use-radix-or-base-ui-primitives-or-they-are-not-yet-supported-and-need-a-custom-implementation)
@@ -95,9 +94,6 @@ export function AccordionDemo() {
   );
 }
 ```
-
-## Unsupported components that have no equivalent in Base UI:
-- Aspect Ratio
 
 ## Bugged using calendar/command inside a Base UI popover:
 ### TODO: Report these to Base UI:

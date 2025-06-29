@@ -31,6 +31,7 @@ import { ToggleDemo } from "./toggle-demo";
 import { ToggleGroupDemo } from "./toggle-group-demo";
 import { TooltipDemo } from "./tooltip-demo";
 import { ContextMenuDemo } from "./context-menu-demo";
+import { AspectRatioDemo } from "./aspect-ratio-demo";
 import { NavigationMenuDemo } from "./navigation-menu-demo";
 
 interface Data {
@@ -68,6 +69,21 @@ const data: Data[] = [
       },
     ],
     children: <AlertDialogDemo />,
+  },
+  {
+    displayName: "Aspect Ratio",
+    slug: "aspect-ratio",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/aspect-ratio",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/aspect-ratio#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <AspectRatioDemo />,
   },
   {
     displayName: "Avatar",
