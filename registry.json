@@ -48,6 +48,16 @@
       ]
     },
     {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
