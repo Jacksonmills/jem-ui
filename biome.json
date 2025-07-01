@@ -36,6 +36,9 @@
       },
       "security": {
         "noDangerouslySetInnerHtml": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "error"
       }
     }
   },

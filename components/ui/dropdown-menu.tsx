@@ -230,8 +230,13 @@ function DropdownMenuArrow({
 
 function DropdownMenuSub({
   ...props
-}: React.ComponentProps<typeof DropdownMenu>) {
-  return <DropdownMenu data-slot="dropdown-menu-sub" {...props} />;
+}: React.ComponentProps<typeof DropdownMenuPrimitive.SubmenuRoot>) {
+  return (
+    <DropdownMenuPrimitive.SubmenuRoot
+      data-slot="dropdown-menu-sub"
+      {...props}
+    />
+  );
 }
 
 function DropdownMenuSubTrigger({
@@ -261,9 +266,7 @@ function DropdownMenuSubTrigger({
 function DropdownMenuSubContent({
   className,
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Popup> & {
-  sideOffset?: number;
-}) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Popup>) {
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Positioner>
