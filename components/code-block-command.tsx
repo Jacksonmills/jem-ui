@@ -1,16 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
 import posthog from "posthog-js";
 import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export function CodeBlockCommand({
-  component,
-}: {
-  component: string;
-}) {
+export function CodeBlockCommand({ component }: { component: string }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   const [hasCopied, setHasCopied] = React.useState(false);
   const [packageManager, setPackageManager] = React.useState<

@@ -83,7 +83,7 @@ export function ComboboxPopover() {
                   {selectedStatus.label}
                 </>
               ) : (
-                <>+ Set status</>
+                "+ Set status"
               )}
             </Button>
           }

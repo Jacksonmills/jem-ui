@@ -2,8 +2,9 @@ import {
   ContextMenu,
   ContextMenuCheckboxItem,
   ContextMenuContent,
-  ContextMenuItem,
+  ContextMenuGroup,
   ContextMenuGroupLabel,
+  ContextMenuItem,
   ContextMenuRadioGroup,
   ContextMenuRadioItem,
   ContextMenuSeparator,
@@ -12,7 +13,6 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-  ContextMenuGroup,
 } from "@/components/ui/context-menu";
 
 export function ContextMenuDemo() {

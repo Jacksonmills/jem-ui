@@ -2,6 +2,7 @@ import * as React from "react";
 import { DemoCard } from "../demo-card";
 import { AccordionDemo } from "./accordion-demo";
 import { AlertDialogDemo } from "./alert-dialog-demo";
+import { AspectRatioDemo } from "./aspect-ratio-demo";
 import { AvatarDemo } from "./avatar-demo";
 import { BadgeDemo } from "./badge-demo";
 import { BreadcrumbDemo } from "./breadcrumb-demo";
@@ -10,6 +11,7 @@ import { CalendarDemo } from "./calendar-demo";
 import { CheckboxDemo } from "./checkbox-demo";
 import { CollapsibleDemo } from "./collapsible-demo";
 import { CommandDialogDemo } from "./command-dialog-demo";
+import { ContextMenuDemo } from "./context-menu-demo";
 import { DialogDemo } from "./dialog-demo";
 import { DropdownMenuDemo } from "./dropdown-menu-demo";
 import { HoverCardDemo } from "./hover-card-demo";
@@ -27,8 +29,6 @@ import { TabsDemo } from "./tabs-demo";
 import { ToggleDemo } from "./toggle-demo";
 import { ToggleGroupDemo } from "./toggle-group-demo";
 import { TooltipDemo } from "./tooltip-demo";
-import { ContextMenuDemo } from "./context-menu-demo";
-import { AspectRatioDemo } from "./aspect-ratio-demo";
 
 interface Data {
   displayName: string;
