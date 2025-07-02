@@ -1,8 +1,12 @@
-import { ComboboxDemo } from "@/components/demos/combobox-demo";
-import { ComboboxPopover } from "@/components/demos/popover-combobox-demo";
 import { Sink } from "@/components/demos/sink";
-import { TextLink } from "@/components/text-link";
-import * as React from "react";
+
+export const generateMetadata = () => {
+  return {
+    title: "Home - JEM/UI",
+    description:
+      "A Base UI based shadcn/ui component library. Open Source. Open Code.",
+  };
+};
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 import { Menubar as MenubarPrimitive } from "@base-ui-components/react/menubar";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+import { CheckIcon, CircleIcon } from "lucide-react";
 import type * as React from "react";
 
 import {
@@ -15,6 +15,9 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuRadioItemIndicator,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
@@ -198,17 +201,19 @@ function MenubarShortcut({
   );
 }
 
-function MenubarSub({ ...props }: React.ComponentProps<typeof DropdownMenu>) {
-  return <DropdownMenu data-slot="menubar-sub" {...props} />;
+function MenubarSub({
+  ...props
+}: React.ComponentProps<typeof DropdownMenuSub>) {
+  return <DropdownMenuSub data-slot="menubar-sub" {...props} />;
 }
 
 function MenubarSubTrigger({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof DropdownMenuTrigger>) {
+}: React.ComponentProps<typeof DropdownMenuSubTrigger>) {
   return (
-    <DropdownMenuTrigger
+    <DropdownMenuSubTrigger
       data-slot="menubar-sub-trigger"
       className={cn(
         "focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none w-full",
@@ -217,19 +222,17 @@ function MenubarSubTrigger({
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto h-4 w-4" />
-    </DropdownMenuTrigger>
+    </DropdownMenuSubTrigger>
   );
 }
 
 function MenubarSubContent({
   className,
   ...props
-}: React.ComponentProps<typeof DropdownMenuContent>) {
+}: React.ComponentProps<typeof DropdownMenuSubContent>) {
   return (
-    <DropdownMenuContent
+    <DropdownMenuSubContent
       data-slot="menubar-sub-content"
-      sideOffset={0}
       className={className}
       {...props}
     />

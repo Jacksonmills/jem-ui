@@ -5,7 +5,7 @@ import { registryItemSchema } from "shadcn/registry";
 
 // This route shows an example for serving a component using a route handler.
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ name: string }> },
 ) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
