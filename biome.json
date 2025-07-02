@@ -49,7 +49,7 @@
         "noUnusedImports": "error"
       },
       "nursery": {
-        "useUniqueElementIds": "warn"
+        "useUniqueElementIds": "off"
       }
     }
   },
