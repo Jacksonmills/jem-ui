@@ -22,10 +22,10 @@ export function CodeBlockCommand({ component }: { component: string }) {
 
   const tabs = React.useMemo(() => {
     return {
-      pnpm: `pnpm dlx shadcn@latest add ${siteUrl}/ui/${component}`,
-      npm: `npx shadcn@latest add ${siteUrl}/ui/${component}`,
-      yarn: `npx shadcn@latest add ${siteUrl}/ui/${component}`,
-      bun: `bunx --bun shadcn@latest add ${siteUrl}/ui/${component}`,
+      pnpm: `pnpm dlx shadcn@latest add ${siteUrl}/ui/${component}.json`,
+      npm: `npx shadcn@latest add ${siteUrl}/ui/${component}.json`,
+      yarn: `yarn shadcn@latest add ${siteUrl}/ui/${component}.json`,
+      bun: `bunx --bun shadcn@latest add ${siteUrl}/ui/${component}.json`,
     };
   }, [siteUrl, component]);
 
