@@ -267,6 +267,18 @@
       ]
     },
     {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "pagination",
       "type": "registry:ui",
       "registryDependencies": ["button"],
