@@ -2,6 +2,7 @@ import * as React from "react";
 import { DemoCard } from "../demo-card";
 import { AccordionDemo } from "./accordion-demo";
 import { AlertDialogDemo } from "./alert-dialog-demo";
+import { AutocompleteDemo } from "./autocomplete-demo";
 import { AspectRatioDemo } from "./aspect-ratio-demo";
 import { AvatarDemo } from "./avatar-demo";
 import { BadgeDemo } from "./badge-demo";
@@ -65,6 +66,22 @@ const data: Data[] = [
       },
     ],
     children: <AlertDialogDemo />,
+  },
+  {
+    displayName: "Autocomplete",
+    slug: "autocomplete",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/autocomplete",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/autocomplete#api-reference",
+        label: "API Reference",
+      },
+    ],
+    description: "A text input enhanced with a panel of suggested options.",
+    children: <AutocompleteDemo />,
   },
   {
     displayName: "Aspect Ratio",
