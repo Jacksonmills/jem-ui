@@ -157,7 +157,7 @@ function AutocompleteItem({
     >
       {children}
       <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
-        <CheckIcon className="h-4 w-4 opacity-0 data-[highlighted]:opacity-100" />
+        <CheckIcon className="h-4 w-4 opacity-0 data-[selected]:opacity-100" />
       </span>
     </AutocompletePrimitive.Item>
   );

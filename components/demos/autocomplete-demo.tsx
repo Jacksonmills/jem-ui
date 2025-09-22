@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
 export const AutocompleteDemo = () => {
   return (
     <div className="w-full max-w-xs">
-      <Autocomplete items={tags} itemToString={(tag) => tag.value}>
+      <Autocomplete items={tags}>
         <Label htmlFor="tags">Search Tags</Label>
         <AutocompleteInput
           id="tags"
