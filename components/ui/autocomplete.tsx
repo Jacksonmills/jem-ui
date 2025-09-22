@@ -1,158 +1,130 @@
 "use client";
 
-import { Input } from "@base-ui-components/react/input";
-import { Popover as PopoverPrimitive } from "@base-ui-components/react/popover";
-import { ScrollArea } from "@base-ui-components/react/scroll-area";
-import { CheckIcon, ChevronDownIcon } from "lucide-react";
+import { Autocomplete as AutocompletePrimitive } from "@base-ui-components/react/autocomplete";
+import { CheckIcon, SearchIcon } from "lucide-react";
 import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-function Autocomplete({
+function Autocomplete<T>({
+  className,
   ...props
-}: React.ComponentProps<typeof PopoverPrimitive.Root>) {
-  return <PopoverPrimitive.Root data-slot="autocomplete" {...props} />;
+}: React.ComponentProps<typeof AutocompletePrimitive.Root<T>>) {
+  return <AutocompletePrimitive.Root data-slot="autocomplete" className={className} {...props} />;
 }
 
 function AutocompleteTrigger({
   className,
-  children,
   ...props
-}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
+}: React.ComponentProps<typeof AutocompletePrimitive.Trigger>) {
   return (
-    <PopoverPrimitive.Trigger
+    <AutocompletePrimitive.Trigger
       data-slot="autocomplete-trigger"
       className={cn("w-full", className)}
       {...props}
-    >
-      {children}
-    </PopoverPrimitive.Trigger>
+    />
   );
 }
 
 function AutocompleteInput({
   className,
   ...props
-}: React.ComponentProps<typeof Input>) {
+}: React.ComponentProps<typeof AutocompletePrimitive.Input>) {
   return (
-    <div className="relative">
-      <Input
+    <div className="flex items-center border-b px-3" data-slot="autocomplete-input-wrapper">
+      <SearchIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+      <AutocompletePrimitive.Input
         data-slot="autocomplete-input"
         className={cn(
-          "pr-8", // Make room for chevron
+          "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         {...props}
       />
-      <ChevronDownIcon className="absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 opacity-50 pointer-events-none" />
     </div>
   );
 }
 
-function AutocompleteContent({
+function AutocompletePortal({
+  ...props
+}: React.ComponentProps<typeof AutocompletePrimitive.Portal>) {
+  return <AutocompletePrimitive.Portal {...props} />;
+}
+
+function AutocompletePositioner({
   className,
-  align = "start",
   sideOffset = 4,
   ...props
-}: React.ComponentProps<typeof PopoverPrimitive.Popup> & {
-  align?: "start" | "center" | "end";
+}: React.ComponentProps<typeof AutocompletePrimitive.Positioner> & {
   sideOffset?: number;
 }) {
   return (
-    <PopoverPrimitive.Portal>
-      <PopoverPrimitive.Positioner align={align} sideOffset={sideOffset}>
-        <PopoverPrimitive.Popup
-          data-slot="autocomplete-content"
+    <AutocompletePrimitive.Positioner
+      data-slot="autocomplete-positioner"
+      sideOffset={sideOffset}
+      className={className}
+      {...props}
+    />
+  );
+}
+
+function AutocompletePopup({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AutocompletePrimitive.Popup>) {
+  return (
+    <AutocompletePortal>
+      <AutocompletePositioner>
+        <AutocompletePrimitive.Popup
+          data-slot="autocomplete-popup"
           className={cn(
-            "bg-popover text-popover-foreground relative z-50 min-w-[8rem] overflow-hidden rounded-md border shadow-md [max-height:var(--available-height)] origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0",
+            "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
             className,
           )}
           {...props}
-        />
-      </PopoverPrimitive.Positioner>
-    </PopoverPrimitive.Portal>
+        >
+          {children}
+        </AutocompletePrimitive.Popup>
+      </AutocompletePositioner>
+    </AutocompletePortal>
   );
 }
 
 function AutocompleteList({
   className,
-  children,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<typeof AutocompletePrimitive.List>) {
   return (
-    <ScrollArea.Root>
-      <ScrollArea.Viewport>
-        <div
-          data-slot="autocomplete-list"
-          className={cn("max-h-[200px] p-1", className)}
-          {...props}
-        >
-          {children}
-        </div>
-      </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar className="m-2 flex w-1 justify-center rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[hovering]:delay-0 data-[hovering]:duration-75 data-[scrolling]:opacity-100 data-[scrolling]:delay-0 data-[scrolling]:duration-75">
-        <ScrollArea.Thumb className="w-full rounded bg-muted-foreground" />
-      </ScrollArea.Scrollbar>
-    </ScrollArea.Root>
-  );
-}
-
-function AutocompleteItem({
-  className,
-  children,
-  selected = false,
-  onSelect,
-  ...props
-}: React.ComponentProps<"div"> & {
-  selected?: boolean;
-  onSelect?: () => void;
-}) {
-  return (
-    <div
-      data-slot="autocomplete-item"
-      className={cn(
-        "focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        className,
-      )}
-      role="option"
-      aria-selected={selected}
-      onClick={onSelect}
+    <AutocompletePrimitive.List
+      data-slot="autocomplete-list"
+      className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
       {...props}
-    >
-      <span className="absolute right-2 flex size-3.5 items-center justify-center">
-        {selected && <CheckIcon className="size-4" />}
-      </span>
-      {children}
-    </div>
+    />
   );
 }
 
 function AutocompleteEmpty({
   className,
-  children = "No results found",
   ...props
-}: React.ComponentProps<"div"> & {
-  children?: React.ReactNode;
-}) {
+}: React.ComponentProps<typeof AutocompletePrimitive.Empty>) {
   return (
-    <div
+    <AutocompletePrimitive.Empty
       data-slot="autocomplete-empty"
-      className={cn("py-6 text-center text-sm text-muted-foreground", className)}
+      className={cn("py-6 text-center text-sm", className)}
       {...props}
-    >
-      {children}
-    </div>
+    />
   );
 }
 
 function AutocompleteGroup({
   className,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<typeof AutocompletePrimitive.Group>) {
   return (
-    <div
+    <AutocompletePrimitive.Group
       data-slot="autocomplete-group"
-      className={cn("overflow-hidden", className)}
+      className={cn("overflow-hidden p-1 text-foreground", className)}
       {...props}
     />
   );
@@ -161,11 +133,46 @@ function AutocompleteGroup({
 function AutocompleteGroupLabel({
   className,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<typeof AutocompletePrimitive.GroupLabel>) {
   return (
-    <div
+    <AutocompletePrimitive.GroupLabel
       data-slot="autocomplete-group-label"
-      className={cn("text-muted-foreground px-2 py-1.5 text-xs font-medium", className)}
+      className={cn("px-2 py-1.5 text-xs font-medium text-muted-foreground", className)}
+      {...props}
+    />
+  );
+}
+
+function AutocompleteItem({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AutocompletePrimitive.Item>) {
+  return (
+    <AutocompletePrimitive.Item
+      data-slot="autocomplete-item"
+      className={cn(
+        "relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none hover:bg-accent hover:text-accent-foreground data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
+        <CheckIcon className="h-4 w-4 opacity-0 data-[highlighted]:opacity-100" />
+      </span>
+    </AutocompletePrimitive.Item>
+  );
+}
+
+function AutocompleteSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof AutocompletePrimitive.Separator>) {
+  return (
+    <AutocompletePrimitive.Separator
+      data-slot="autocomplete-separator"
+      className={cn("-mx-1 my-1 h-px bg-border", className)}
       {...props}
     />
   );
@@ -175,10 +182,13 @@ export {
   Autocomplete,
   AutocompleteTrigger,
   AutocompleteInput,
-  AutocompleteContent,
+  AutocompletePortal,
+  AutocompletePositioner,
+  AutocompletePopup,
   AutocompleteList,
-  AutocompleteItem,
   AutocompleteEmpty,
   AutocompleteGroup,
   AutocompleteGroupLabel,
+  AutocompleteItem,
+  AutocompleteSeparator,
 };
