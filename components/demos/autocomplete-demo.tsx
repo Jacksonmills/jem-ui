@@ -9,28 +9,33 @@ import {
   AutocompletePopup,
 } from "@/components/ui/autocomplete";
 import { Label } from "@/components/ui/label";
+import { AutocompleteGroupedDemo } from "./autocomplete-grouped-demo";
 
 export const AutocompleteDemo = () => {
   return (
-    <div className="w-full max-w-xs">
-      <Autocomplete items={tags}>
-        <Label htmlFor="tags">Search Tags</Label>
-        <AutocompleteInput
-          id="tags"
-          placeholder="e.g. feature"
-          className="mt-2"
-        />
-        <AutocompletePopup>
-          <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
-          <AutocompleteList>
-            {(tag) => (
-              <AutocompleteItem key={tag.id} value={tag.value}>
-                {tag.value}
-              </AutocompleteItem>
-            )}
-          </AutocompleteList>
-        </AutocompletePopup>
-      </Autocomplete>
+    <div className="flex flex-col gap-8">
+      <div className="w-full max-w-xs">
+        <Autocomplete items={tags}>
+          <Label htmlFor="tags">Search Tags</Label>
+          <AutocompleteInput
+            id="tags"
+            placeholder="e.g. feature"
+            className="mt-2"
+          />
+          <AutocompletePopup>
+            <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
+            <AutocompleteList>
+              {(tag) => (
+                <AutocompleteItem key={tag.id} value={tag.value}>
+                  {tag.value}
+                </AutocompleteItem>
+              )}
+            </AutocompleteList>
+          </AutocompletePopup>
+        </Autocomplete>
+      </div>
+
+      <AutocompleteGroupedDemo />
     </div>
   );
 };

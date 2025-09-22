@@ -1,11 +1,11 @@
 "use client";
 
 import { Autocomplete as AutocompletePrimitive } from "@base-ui-components/react/autocomplete";
-import { CheckIcon } from "lucide-react";
 import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { Input } from "./input";
+import { ScrollArea } from "./scroll-area";
 
 function Autocomplete({
   ...props
@@ -14,13 +14,11 @@ function Autocomplete({
 }
 
 function AutocompleteTrigger({
-  className,
   ...props
 }: React.ComponentProps<typeof AutocompletePrimitive.Trigger>) {
   return (
     <AutocompletePrimitive.Trigger
       data-slot="autocomplete-trigger"
-      className={cn("w-full", className)}
       {...props}
     />
   );
@@ -85,14 +83,13 @@ function AutocompleteList({
   ...props
 }: React.ComponentProps<typeof AutocompletePrimitive.List>) {
   return (
-    <AutocompletePrimitive.List
-      data-slot="autocomplete-list"
-      className={cn(
-        "max-h-[300px] overflow-y-auto overflow-x-hidden",
-        className,
-      )}
-      {...props}
-    />
+    <ScrollArea>
+      <AutocompletePrimitive.List
+        data-slot="autocomplete-list"
+        className={cn("max-h-[300px]", className)}
+        {...props}
+      />
+    </ScrollArea>
   );
 }
 
@@ -110,6 +107,12 @@ function AutocompleteEmpty({
       {...props}
     />
   );
+}
+
+function AutocompleteCollection({
+  ...props
+}: React.ComponentProps<typeof AutocompletePrimitive.Collection>) {
+  return <AutocompletePrimitive.Collection {...props} />;
 }
 
 function AutocompleteGroup({
@@ -143,7 +146,6 @@ function AutocompleteGroupLabel({
 
 function AutocompleteItem({
   className,
-  children,
   ...props
 }: React.ComponentProps<typeof AutocompletePrimitive.Item>) {
   return (
@@ -154,12 +156,7 @@ function AutocompleteItem({
         className,
       )}
       {...props}
-    >
-      {children}
-      <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
-        <CheckIcon className="h-4 w-4 opacity-0 data-[selected]:opacity-100" />
-      </span>
-    </AutocompletePrimitive.Item>
+    />
   );
 }
 
@@ -185,6 +182,7 @@ export {
   AutocompletePopup,
   AutocompleteList,
   AutocompleteEmpty,
+  AutocompleteCollection,
   AutocompleteGroup,
   AutocompleteGroupLabel,
   AutocompleteItem,
