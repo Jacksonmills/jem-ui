@@ -1,114 +1,85 @@
 "use client";
 
-import * as React from "react";
-
 import {
   Autocomplete,
-  AutocompleteInput,
-  AutocompletePopup,
-  AutocompleteList,
-  AutocompleteItem,
   AutocompleteEmpty,
-  AutocompleteGroup,
-  AutocompleteGroupLabel,
+  AutocompleteInput,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopup,
 } from "@/components/ui/autocomplete";
+import { Label } from "@/components/ui/label";
 
-interface Framework {
-  value: string;
-  label: string;
-  category: string;
-}
-
-const frameworks: Framework[] = [
-  {
-    value: "next.js",
-    label: "Next.js",
-    category: "React",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-    category: "React",
-  },
-  {
-    value: "gatsby",
-    label: "Gatsby",
-    category: "React",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-    category: "Svelte",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-    category: "Vue",
-  },
-  {
-    value: "vue.js",
-    label: "Vue.js",
-    category: "Vue",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-    category: "Multi-framework",
-  },
-  {
-    value: "vite",
-    label: "Vite",
-    category: "Build Tool",
-  },
-  {
-    value: "angular",
-    label: "Angular",
-    category: "Angular",
-  },
-  {
-    value: "express",
-    label: "Express.js",
-    category: "Node.js",
-  },
-];
-
-// Group frameworks by category
-const groupedFrameworks = frameworks.reduce((groups, framework) => {
-  const category = framework.category;
-  if (!groups[category]) {
-    groups[category] = [];
-  }
-  groups[category].push(framework);
-  return groups;
-}, {} as Record<string, Framework[]>);
-
-export function AutocompleteDemo() {
+export const AutocompleteDemo = () => {
   return (
-    <div className="flex items-center space-x-4">
-      <p className="text-sm text-muted-foreground">Framework</p>
-      <Autocomplete
-        items={frameworks}
-        itemToStringValue={(item: Framework) => item.label}
-        placeholder="Select framework..."
-        className="w-[250px]"
-      >
-        <AutocompleteInput placeholder="Search frameworks..." />
-        <AutocompletePopup className="w-[250px]">
+    <div className="w-full max-w-xs">
+      <Autocomplete items={tags}>
+        <Label htmlFor="tags">Search Tags</Label>
+        <AutocompleteInput
+          id="tags"
+          placeholder="e.g. feature"
+          className="mt-2"
+        />
+        <AutocompletePopup>
+          <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
           <AutocompleteList>
-            <AutocompleteEmpty>No framework found.</AutocompleteEmpty>
-            {Object.entries(groupedFrameworks).map(([category, items]) => (
-              <AutocompleteGroup key={category}>
-                <AutocompleteGroupLabel>{category}</AutocompleteGroupLabel>
-                {items.map((framework) => (
-                  <AutocompleteItem key={framework.value} value={framework}>
-                    {framework.label}
-                  </AutocompleteItem>
-                ))}
-              </AutocompleteGroup>
-            ))}
+            {(tag) => (
+              <AutocompleteItem key={tag.id} value={tag.value}>
+                {tag.value}
+              </AutocompleteItem>
+            )}
           </AutocompleteList>
         </AutocompletePopup>
       </Autocomplete>
     </div>
   );
+};
+
+interface Tag {
+  id: string;
+  value: string;
 }
+
+const tags: Tag[] = [
+  { id: "t1", value: "feature" },
+  { id: "t2", value: "fix" },
+  { id: "t3", value: "bug" },
+  { id: "t4", value: "docs" },
+  { id: "t5", value: "internal" },
+  { id: "t6", value: "mobile" },
+  { id: "c-accordion", value: "component: accordion" },
+  { id: "c-alert-dialog", value: "component: alert dialog" },
+  { id: "c-autocomplete", value: "component: autocomplete" },
+  { id: "c-avatar", value: "component: avatar" },
+  { id: "c-checkbox", value: "component: checkbox" },
+  { id: "c-checkbox-group", value: "component: checkbox group" },
+  { id: "c-collapsible", value: "component: collapsible" },
+  { id: "c-combobox", value: "component: combobox" },
+  { id: "c-context-menu", value: "component: context menu" },
+  { id: "c-dialog", value: "component: dialog" },
+  { id: "c-field", value: "component: field" },
+  { id: "c-fieldset", value: "component: fieldset" },
+  { id: "c-filterable-menu", value: "component: filterable menu" },
+  { id: "c-form", value: "component: form" },
+  { id: "c-input", value: "component: input" },
+  { id: "c-menu", value: "component: menu" },
+  { id: "c-menubar", value: "component: menubar" },
+  { id: "c-meter", value: "component: meter" },
+  { id: "c-navigation-menu", value: "component: navigation menu" },
+  { id: "c-number-field", value: "component: number field" },
+  { id: "c-popover", value: "component: popover" },
+  { id: "c-preview-card", value: "component: preview card" },
+  { id: "c-progress", value: "component: progress" },
+  { id: "c-radio", value: "component: radio" },
+  { id: "c-scroll-area", value: "component: scroll area" },
+  { id: "c-select", value: "component: select" },
+  { id: "c-separator", value: "component: separator" },
+  { id: "c-slider", value: "component: slider" },
+  { id: "c-switch", value: "component: switch" },
+  { id: "c-tabs", value: "component: tabs" },
+  { id: "c-toast", value: "component: toast" },
+  { id: "c-toggle", value: "component: toggle" },
+  { id: "c-toggle-group", value: "component: toggle group" },
+  { id: "c-toolbar", value: "component: toolbar" },
+  { id: "c-tooltip", value: "component: tooltip" },
+];
