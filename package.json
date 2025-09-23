@@ -14,7 +14,7 @@
     "registry:build": "shadcn build"
   },
   "dependencies": {
-    "@base-ui-components/react": "1.0.0-beta.1",
+    "@base-ui-components/react": "^1.0.0-beta.3",
     "@hookform/resolvers": "^4.1.3",
     "@tanstack/react-query": "^5.64.1",
     "@vercel/analytics": "^1.5.0",
