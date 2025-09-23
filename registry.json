@@ -61,7 +61,7 @@
       "name": "autocomplete",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["input"],
+      "registryDependencies": ["input", "scroll-area"],
       "files": [
         {
           "path": "registry/ui/autocomplete.tsx",

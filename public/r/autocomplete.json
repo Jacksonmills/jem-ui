@@ -6,7 +6,8 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "input"
+    "input",
+    "scroll-area"
   ],
   "files": [
     {
