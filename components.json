@@ -19,6 +19,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@jemui": "https://jem-ui.vercel.app/r/{name}.json"
+    "@jemui": "http://localhost:3000/r/{name}.json"
   }
 }
