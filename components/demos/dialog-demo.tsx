@@ -32,7 +32,7 @@ export function DialogDemo() {
             </Label>
             <Input
               id="name"
-              value="Pedro Duarte"
+              value="Michał Dudak"
               className="col-span-3"
               readOnly
             />
@@ -43,7 +43,7 @@ export function DialogDemo() {
             </Label>
             <Input
               id="username"
-              value="@peduarte"
+              value="@michaldudak"
               className="col-span-3"
               readOnly
             />

@@ -54,9 +54,9 @@ export function ContextMenuDemo() {
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuGroupLabel inset>People</ContextMenuGroupLabel>
-          <ContextMenuRadioGroup value="pedro">
-            <ContextMenuRadioItem value="pedro">
-              Pedro Duarte
+          <ContextMenuRadioGroup value="michal">
+            <ContextMenuRadioItem value="michal">
+              Michał Dudak
             </ContextMenuRadioItem>
             <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
