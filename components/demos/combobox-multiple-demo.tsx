@@ -36,7 +36,7 @@ export function ComboboxMultipleDemo() {
                 <ComboboxInput
                   id={id}
                   placeholder={value.length > 0 ? "" : "e.g. TypeScript"}
-                  className="focus-visible:border-transparent focus-visible:ring-transparent focus-visible:ring-0 bg-transparent border-transparent min-w-12 flex-1 h-fit rounded-md border-0 pl-0 text-base outline-none"
+                  className="focus-visible:border-transparent focus-visible:ring-transparent focus-visible:ring-0 bg-transparent border-transparent min-w-12 flex-1 h-fit rounded-md border-0 pl-0 text-base outline-none shadow-none"
                 />
               </React.Fragment>
             )}

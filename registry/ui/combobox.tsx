@@ -26,7 +26,7 @@ function ComboboxInput({
   return (
     <ComboboxPrimitive.Input
       data-slot="combobox-input"
-      render={<Input className={cn("shadow-none", className)} />}
+      render={<Input className={cn(className)} />}
       {...props}
     />
   );
@@ -195,7 +195,7 @@ function ComboboxChips({
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       className={cn(
-        "min-h-9 flex flex-wrap items-center gap-1 rounded-md transition-[color,box-shadow] py-1 px-3 border-input border bg-input/30",
+        "min-h-9 flex flex-wrap items-center gap-1 rounded-md transition-[color,box-shadow] py-1 px-3 border-input border bg-input/30 shadow-xs",
         "focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]",
         className,
       )}
@@ -212,7 +212,7 @@ function ComboboxChip({
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
       className={cn(
-        "flex items-center gap-1 rounded-md bg-muted px-1 ps-2 pe-0 text-xs outline-none cursor-default p-1 pl-2 h-full",
+        "flex items-center gap-1 rounded-md bg-border px-1 ps-2 pe-0 text-xs outline-none cursor-default p-1 pl-2 h-full",
         className,
       )}
       {...props}
