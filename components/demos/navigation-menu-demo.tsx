@@ -78,7 +78,7 @@ export const NavigationMenuDemo = () => {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+                Re-usable components built using Base UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
@@ -199,7 +199,7 @@ export const NavigationMenuDemo = () => {
       </NavigationMenuPositioner>
     </NavigationMenu>
   );
-}
+};
 
 function ListItem({
   title,

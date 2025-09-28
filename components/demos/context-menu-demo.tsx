@@ -21,8 +21,8 @@ export function ContextMenuDemo() {
       <ContextMenuTrigger className="flex h-[150px] md:w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
         Right click here
       </ContextMenuTrigger>
-      <ContextMenuContent className="w-52">
-        <ContextMenuItem inset>
+      <ContextMenuContent className="w-52 rounded-tl-none">
+        <ContextMenuItem inset className="rounded-tl-none">
           Back
           <ContextMenuShortcut>⌘[</ContextMenuShortcut>
         </ContextMenuItem>
@@ -36,8 +36,10 @@ export function ContextMenuDemo() {
         </ContextMenuItem>
         <ContextMenuSub>
           <ContextMenuSubTrigger inset>More Tools</ContextMenuSubTrigger>
-          <ContextMenuSubContent className="w-44">
-            <ContextMenuItem>Save Page...</ContextMenuItem>
+          <ContextMenuSubContent className="w-44 rounded-tl-none">
+            <ContextMenuItem className="rounded-tl-none">
+              Save Page...
+            </ContextMenuItem>
             <ContextMenuItem>Create Shortcut...</ContextMenuItem>
             <ContextMenuItem>Name Window...</ContextMenuItem>
             <ContextMenuSeparator />

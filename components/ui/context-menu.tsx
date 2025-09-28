@@ -1,7 +1,6 @@
 "use client";
 
 import { ContextMenu as ContextMenuPrimitive } from "@base-ui-components/react/context-menu";
-import { Menu as MenuPrimitive } from "@base-ui-components/react/menu";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 import type * as React from "react";
 
@@ -39,8 +38,10 @@ function ContextMenuPortal({
 
 function ContextMenuSub({
   ...props
-}: React.ComponentProps<typeof MenuPrimitive.SubmenuRoot>) {
-  return <MenuPrimitive.SubmenuRoot data-slot="context-menu-sub" {...props} />;
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubmenuRoot>) {
+  return (
+    <ContextMenuPrimitive.SubmenuRoot data-slot="context-menu-sub" {...props} />
+  );
 }
 
 function ContextMenuRadioGroup({
@@ -59,11 +60,11 @@ function ContextMenuSubTrigger({
   inset,
   children,
   ...props
-}: React.ComponentProps<typeof MenuPrimitive.SubmenuTrigger> & {
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubmenuTrigger> & {
   inset?: boolean;
 }) {
   return (
-    <MenuPrimitive.SubmenuTrigger
+    <ContextMenuPrimitive.SubmenuTrigger
       data-slot="context-menu-sub-trigger"
       data-inset={inset}
       className={cn(
@@ -74,41 +75,51 @@ function ContextMenuSubTrigger({
     >
       {children}
       <ChevronRightIcon className="ml-auto" />
-    </MenuPrimitive.SubmenuTrigger>
+    </ContextMenuPrimitive.SubmenuTrigger>
   );
 }
 
 function ContextMenuSubContent({
   className,
+  sideOffset,
   ...props
-}: React.ComponentProps<typeof MenuPrimitive.Popup>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Popup> & {
+  sideOffset?: React.ComponentProps<
+    typeof ContextMenuPrimitive.Positioner
+  >["sideOffset"];
+}) {
   return (
-    <MenuPrimitive.Portal>
-      <MenuPrimitive.Positioner>
-        <MenuPrimitive.Popup
+    <ContextMenuPrimitive.Portal>
+      <ContextMenuPrimitive.Positioner sideOffset={sideOffset}>
+        <ContextMenuPrimitive.Popup
           data-slot="context-menu-sub-content"
           className={cn(
-            "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-md border p-1 shadow-lg outline-hidden",
+            "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-[var(--transform-origin)] overflow-hidden rounded-md border p-1 shadow-lg outline-hidden",
             className,
           )}
           {...props}
         />
-      </MenuPrimitive.Positioner>
-    </MenuPrimitive.Portal>
+      </ContextMenuPrimitive.Positioner>
+    </ContextMenuPrimitive.Portal>
   );
 }
 
 function ContextMenuContent({
   className,
+  sideOffset,
   ...props
-}: React.ComponentProps<typeof ContextMenuPrimitive.Popup>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Popup> & {
+  sideOffset?: React.ComponentProps<
+    typeof ContextMenuPrimitive.Positioner
+  >["sideOffset"];
+}) {
   return (
     <ContextMenuPrimitive.Portal>
-      <ContextMenuPrimitive.Positioner>
+      <ContextMenuPrimitive.Positioner sideOffset={sideOffset}>
         <ContextMenuPrimitive.Popup
           data-slot="context-menu-content"
           className={cn(
-            "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md outline-hidden",
+            "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-[var(--transform-origin)] overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md outline-hidden",
             className,
           )}
           {...props}
