@@ -3,7 +3,7 @@
   "name": "calendar",
   "type": "registry:ui",
   "registryDependencies": [
-    "button"
+    "https://jem-ui.vercel.app/r/button.json"
   ],
   "files": [
     {

@@ -1,4 +1,4 @@
-import { Sink } from "@/components/demos/sink";
+import { Sink } from "@/components/sink";
 
 export const generateMetadata = () => {
   return {

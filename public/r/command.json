@@ -7,7 +7,7 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "dialog"
+    "https://jem-ui.vercel.app/r/dialog.json"
   ],
   "files": [
     {

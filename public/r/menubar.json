@@ -6,7 +6,7 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "dropdown-menu"
+    "https://jem-ui.vercel.app/r/dropdown-menu.json"
   ],
   "files": [
     {

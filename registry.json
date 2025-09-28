@@ -29,7 +29,7 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/button.json"],
       "files": [
         {
           "path": "registry/ui/alert-dialog.tsx",
@@ -61,7 +61,10 @@
       "name": "autocomplete",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["input", "scroll-area"],
+      "registryDependencies": [
+        "https://jem-ui.vercel.app/r/input.json",
+        "https://jem-ui.vercel.app/r/scroll-area.json"
+      ],
       "files": [
         {
           "path": "registry/ui/autocomplete.tsx",
@@ -116,7 +119,7 @@
     {
       "name": "calendar",
       "type": "registry:ui",
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/button.json"],
       "files": [
         {
           "path": "registry/ui/calendar.tsx",
@@ -138,7 +141,7 @@
       "name": "carousel",
       "type": "registry:ui",
       "dependencies": ["embla-carousel-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/button.json"],
       "files": [
         {
           "path": "registry/ui/carousel.tsx",
@@ -180,10 +183,25 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": [
+        "https://jem-ui.vercel.app/r/input.json",
+        "https://jem-ui.vercel.app/r/scroll-area.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "command",
       "type": "registry:ui",
       "dependencies": ["cmdk@1.0.0", "@base-ui-components/react"],
-      "registryDependencies": ["dialog"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/dialog.json"],
       "files": [
         {
           "path": "registry/ui/command.tsx",
@@ -270,7 +288,9 @@
       "name": "menubar",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["dropdown-menu"],
+      "registryDependencies": [
+        "https://jem-ui.vercel.app/r/dropdown-menu.json"
+      ],
       "files": [
         {
           "path": "registry/ui/menubar.tsx",
@@ -282,7 +302,6 @@
       "name": "navigation-menu",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": [],
       "files": [
         {
           "path": "registry/ui/navigation-menu.tsx",
@@ -293,7 +312,7 @@
     {
       "name": "pagination",
       "type": "registry:ui",
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/button.json"],
       "files": [
         {
           "path": "registry/ui/pagination.tsx",
@@ -436,7 +455,7 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["toggle"],
+      "registryDependencies": ["https://jem-ui.vercel.app/r/toggle.json"],
       "files": [
         {
           "path": "registry/ui/toggle-group.tsx",

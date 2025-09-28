@@ -6,7 +6,7 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "toggle"
+    "https://jem-ui.vercel.app/r/toggle.json"
   ],
   "files": [
     {

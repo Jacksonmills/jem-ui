@@ -6,8 +6,8 @@
     "@base-ui-components/react"
   ],
   "registryDependencies": [
-    "input",
-    "scroll-area"
+    "https://jem-ui.vercel.app/r/input.json",
+    "https://jem-ui.vercel.app/r/scroll-area.json"
   ],
   "files": [
     {

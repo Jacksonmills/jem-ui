@@ -1,36 +1,37 @@
 import * as React from "react";
-import { DemoCard } from "../demo-card";
-import { AccordionDemo } from "./accordion-demo";
-import { AlertDialogDemo } from "./alert-dialog-demo";
-import { AspectRatioDemo } from "./aspect-ratio-demo";
-import { AutocompleteDemo } from "./autocomplete-demo";
-import { AvatarDemo } from "./avatar-demo";
-import { BadgeDemo } from "./badge-demo";
-import { BreadcrumbDemo } from "./breadcrumb-demo";
-import { ButtonDemo } from "./button-demo";
-import { CalendarDemo } from "./calendar-demo";
-import { CheckboxDemo } from "./checkbox-demo";
-import { CollapsibleDemo } from "./collapsible-demo";
-import { CommandDialogDemo } from "./command-dialog-demo";
-import { ContextMenuDemo } from "./context-menu-demo";
-import { DialogDemo } from "./dialog-demo";
-import { DropdownMenuDemo } from "./dropdown-menu-demo";
-import { HoverCardDemo } from "./hover-card-demo";
-import { InputDemo } from "./input-demo";
-import { MenubarDemo } from "./menubar-demo";
-import { NavigationMenuDemo } from "./navigation-menu-demo";
-import { PopoverDemo } from "./popover-demo";
-import { ProgressDemo } from "./progress-demo";
-import { RadioGroupDemo } from "./radio-group-demo";
-import { ScrollAreaDemo } from "./scroll-area-demo";
-import { SelectDemo } from "./select-demo";
-import { SheetDemo } from "./sheet-demo";
-import { SliderDemo } from "./slider-demo";
-import { SwitchDemo } from "./switch-demo";
-import { TabsDemo } from "./tabs-demo";
-import { ToggleDemo } from "./toggle-demo";
-import { ToggleGroupDemo } from "./toggle-group-demo";
-import { TooltipDemo } from "./tooltip-demo";
+import { DemoCard } from "./demo-card";
+import { AccordionDemo } from "./demos/accordion-demo";
+import { AlertDialogDemo } from "./demos/alert-dialog-demo";
+import { AspectRatioDemo } from "./demos/aspect-ratio-demo";
+import { AutocompleteDemo } from "./demos/autocomplete-demo";
+import { AvatarDemo } from "./demos/avatar-demo";
+import { BadgeDemo } from "./demos/badge-demo";
+import { BreadcrumbDemo } from "./demos/breadcrumb-demo";
+import { ButtonDemo } from "./demos/button-demo";
+import { CalendarDemo } from "./demos/calendar-demo";
+import { CheckboxDemo } from "./demos/checkbox-demo";
+import { CollapsibleDemo } from "./demos/collapsible-demo";
+import { ComboboxDemo } from "./demos/combobox-demo";
+import { CommandDialogDemo } from "./demos/command-dialog-demo";
+import { ContextMenuDemo } from "./demos/context-menu-demo";
+import { DialogDemo } from "./demos/dialog-demo";
+import { DropdownMenuDemo } from "./demos/dropdown-menu-demo";
+import { HoverCardDemo } from "./demos/hover-card-demo";
+import { InputDemo } from "./demos/input-demo";
+import { MenubarDemo } from "./demos/menubar-demo";
+import { NavigationMenuDemo } from "./demos/navigation-menu-demo";
+import { PopoverDemo } from "./demos/popover-demo";
+import { ProgressDemo } from "./demos/progress-demo";
+import { RadioGroupDemo } from "./demos/radio-group-demo";
+import { ScrollAreaDemo } from "./demos/scroll-area-demo";
+import { SelectDemo } from "./demos/select-demo";
+import { SheetDemo } from "./demos/sheet-demo";
+import { SliderDemo } from "./demos/slider-demo";
+import { SwitchDemo } from "./demos/switch-demo";
+import { TabsDemo } from "./demos/tabs-demo";
+import { ToggleDemo } from "./demos/toggle-demo";
+import { ToggleGroupDemo } from "./demos/toggle-group-demo";
+import { TooltipDemo } from "./demos/tooltip-demo";
 
 interface Data {
   displayName: string;
@@ -181,6 +182,20 @@ const data: Data[] = [
       },
     ],
     children: <CollapsibleDemo />,
+  },
+  {
+    displayName: "Combobox",
+    slug: "combobox",
+    links: [
+      { href: "https://base-ui.com/react/components/combobox", label: "Docs" },
+      {
+        href: "https://base-ui.com/react/components/combobox#api-reference",
+        label: "API Reference",
+      },
+    ],
+    description:
+      "A combo box is a commonly used UI pattern that combines a text input with a dropdown list of options.",
+    children: <ComboboxDemo />,
   },
   {
     displayName: "Command Dialog",

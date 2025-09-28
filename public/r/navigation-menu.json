@@ -5,7 +5,6 @@
   "dependencies": [
     "@base-ui-components/react"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "registry/ui/navigation-menu.tsx",
