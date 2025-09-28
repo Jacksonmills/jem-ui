@@ -103,7 +103,6 @@ export function AccordionDemo() {
 ## TODO: Either these components do not use Radix or Base UI primitives, or they are not yet supported and need a custom implementation:
 - Form
 - Input OTP
-- Navigation Menu
 - Resizable
 - Sidebar
 - Skeleton

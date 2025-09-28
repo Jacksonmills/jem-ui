@@ -18,6 +18,7 @@ import { DropdownMenuDemo } from "./dropdown-menu-demo";
 import { HoverCardDemo } from "./hover-card-demo";
 import { InputDemo } from "./input-demo";
 import { MenubarDemo } from "./menubar-demo";
+import { NavigationMenuDemo } from "./navigation-menu-demo";
 import { PopoverDemo } from "./popover-demo";
 import { ProgressDemo } from "./progress-demo";
 import { RadioGroupDemo } from "./radio-group-demo";
@@ -275,6 +276,21 @@ const data: Data[] = [
       },
     ],
     children: <MenubarDemo />,
+  },
+  {
+    displayName: "Navigation Menu",
+    slug: "navigation-menu",
+    links: [
+      {
+        href: "https://base-ui.com/react/components/navigation-menu",
+        label: "Docs",
+      },
+      {
+        href: "https://base-ui.com/react/components/navigation-menu#api-reference",
+        label: "API Reference",
+      },
+    ],
+    children: <NavigationMenuDemo />,
   },
   {
     displayName: "Popover",
