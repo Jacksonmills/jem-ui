@@ -1,6 +1,7 @@
-import type { NextConfig } from "next";
+import { createMDX } from "fumadocs-mdx/next"
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   outputFileTracingIncludes: {
     ui: ["./registry/**/*"],
   },
@@ -25,6 +26,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
-};
+}
 
-export default nextConfig;
+const withMDX = createMDX({})
+
+export default withMDX(nextConfig)

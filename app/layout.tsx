@@ -1,3 +1,4 @@
+import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -66,7 +67,7 @@ export default function RootLayout({
                     <TextLink href="https://ui.shadcn.com/">shadcn</TextLink>.
                   </p>
                 </header>
-                {children}
+                <RootProvider>{children}</RootProvider>
               </div>
               <footer className="text-muted-foreground text-sm p-4 border-t-2 border-dotted">
                 Built by{" "}
